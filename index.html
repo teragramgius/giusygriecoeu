@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giusy Grieco — Europrogettista per la cultura</title>
+<meta name="description" content="Giusy Grieco, europrogettista ed EU Project Manager: Horizon Europe, patrimonio culturale, rigenerazione urbana, Digital Humanities e New Media Art.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='13' r='7' fill='%232F5BEA'/><path d='M16 30 L10 18 H22 Z' fill='%232F5BEA'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1EC;      /* carta topografica */
+  --paper-2:#E1E7DF;
+  --ink:#14213D;        /* inchiostro cartografico */
+  --ink-soft:#43506B;
+  --route:#2F5BEA;      /* il percorso */
+  --highlight:#F2C230;  /* evidenziatore */
+  --contour:#5E8C6A;    /* curve di livello */
+  --white:#FFFFFF;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55}
+img,svg{max-width:100%}
+a{color:var(--route)}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--highlight);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin:0}
+h2{font-size:clamp(34px,4.4vw,52px)}
+h3{font-size:24px;letter-spacing:-0.01em}
+p{margin:0}
+.lead{font-size:clamp(19px,2vw,22px);color:var(--ink-soft);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:17px}
+.btn-solid{background:var(--ink);color:var(--white)}
+.btn-solid:hover{background:var(--route);color:var(--white)}
+.btn-line{border:2px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--white)}
+.btn svg{width:20px;height:20px;flex-shrink:0}
+
+/* ---------- top bar ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px}
+.brand svg{width:26px;height:26px}
+.nav{display:flex;gap:22px;flex-wrap:wrap}
+.nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:16px;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--route)}
+
+/* ---------- hero ---------- */
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(46px,7vw,92px);max-width:14ch}
+.hero .lead{margin-top:26px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+
+/* pipeline: the memorable element */
+.pipeline{margin:64px 0 0;background:var(--white);border-radius:24px;padding:36px 28px 30px;position:relative;overflow:hidden}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
+.route{position:absolute;left:0;top:0;width:100%;height:92px;z-index:0}
+.route path{fill:none;stroke:var(--route);stroke-width:4;stroke-linecap:round;stroke-dasharray:10 10;vector-effect:non-scaling-stroke}
+.step{position:relative;z-index:1;align-items:center;text-align:center}
+.node{width:92px;height:92px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;margin-bottom:10px;border:4px solid var(--white)}
+.node svg{width:42px;height:42px;color:var(--ink)}
+.node-end{background:var(--highlight)}
+.step{display:flex;flex-direction:column;gap:6px}
+.step b{font-family:var(--display);font-size:24px}
+.step span{font-size:16px;color:var(--ink-soft)}
+
+/* ---------- sections ---------- */
+section{padding:88px 0}
+.section-head{display:flex;flex-direction:column;gap:16px;margin-bottom:40px;max-width:760px}
+.band{background:var(--ink);color:var(--white)}
+.band .lead{color:#C9D1E4}
+.band a{color:var(--highlight)}
+
+/* ---------- map ---------- */
+.map-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:stretch}
+.map{position:relative;border-radius:20px;background:#1B2B4F;overflow:hidden;aspect-ratio:760/820;width:100%}
+.map-svg{display:block;width:100%;height:100%}
+.map-svg .land{fill:#2A3D66;stroke:#1B2B4F;stroke-width:1}
+.map-svg .land-it{fill:#3A5186;stroke:#1B2B4F;stroke-width:1}
+#pins{position:absolute;inset:0}
+.pinbtn{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border:none;background:transparent;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.pinlabel{position:absolute;transform:translate(18px,-50%);font-weight:700;font-size:14px;color:#FFFFFF;white-space:nowrap;pointer-events:none;text-shadow:0 1px 3px #0E1830,0 0 6px #0E1830}
+.pinlabel.below{transform:translate(-30%,16px)}
+.pinlabel.left{transform:translate(calc(-100% - 18px),-50%)}
+.story{background:var(--white);color:var(--ink);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:14px;align-self:start}
+.story-kind{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;align-self:flex-start;padding:6px 14px;border-radius:999px}
+.story h3{font-size:34px}
+.story .when{color:var(--ink-soft);font-weight:700}
+.story .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.story .tags span{font-size:15px;padding:6px 12px;border-radius:999px;background:var(--paper)}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:16px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:16px;height:16px;border-radius:50%;display:inline-block;border:3px solid var(--white)}
+.k-eu{background:var(--route)} .k-comm{background:var(--highlight)} .k-root{background:var(--contour)}
+.place-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.place-list button{font:inherit;font-size:16px;font-weight:700;min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #3B4A6B;background:transparent;color:var(--white);cursor:pointer}
+.place-list button[aria-pressed="true"]{background:var(--white);color:var(--ink);border-color:var(--white)}
+.pin{display:block;width:22px;height:22px;border-radius:50%;border:4px solid var(--white);box-shadow:0 0 0 2px var(--ink);transition:transform .2s}
+.pin.is-active{transform:scale(1.45);box-shadow:0 0 0 2px var(--ink),0 0 0 8px rgba(242,194,48,.5)}
+
+
+/* ---------- tools ---------- */
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.tool{background:var(--white);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.tool-fig{display:block;width:100%;height:auto;background:var(--paper);border-radius:14px;padding:12px;margin-bottom:6px}
+.tool p{font-size:16px;color:var(--ink-soft)}
+.tool .used{margin-top:auto;font-size:15px;font-weight:700;color:var(--route);padding-top:6px}
+
+/* ---------- project management ---------- */
+.gantt{background:var(--white);border-radius:20px;padding:28px}
+.g-row{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:center;gap:16px;min-height:62px;border-bottom:1px solid var(--paper-2)}
+.g-row:last-child{border-bottom:none}
+.g-name b{display:block;font-size:17px}
+.g-name small{color:var(--ink-soft);font-size:15px}
+.g-track{position:relative;height:30px;background:repeating-linear-gradient(90deg,var(--paper-2) 0 1px,transparent 1px calc(100%/6))}
+.g-bar{position:absolute;top:3px;height:24px;border-radius:6px}
+.g-years{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));font-weight:700;font-size:15px;color:var(--ink-soft)}
+.g-head{border-bottom:2px solid var(--ink);min-height:40px}
+
+.wp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:40px;position:relative}
+.wp-step{background:var(--white);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px;position:relative}
+.wp-step .ico{width:52px;height:52px;border-radius:14px;background:var(--paper);display:flex;align-items:center;justify-content:center}
+.wp-step .ico svg{width:28px;height:28px}
+.wp-step p{font-size:16px;color:var(--ink-soft)}
+.wp-step:not(:last-child)::after{content:"";position:absolute;right:-18px;top:50px;width:18px;height:4px;background:var(--route)}
+.dots{display:flex;gap:6px;flex-wrap:wrap}
+.dots i{width:14px;height:14px;border-radius:50%;background:var(--route);display:block}
+.dots i.pale{background:var(--paper-2)}
+
+/* ---------- what I bring ---------- */
+.bring{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.bring-card{border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;background:var(--white)}
+.bring-card .ico{width:56px;height:56px}
+.bring-card p{font-size:17px;color:var(--ink-soft)}
+.cefr{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.cefr-row{display:grid;grid-template-columns:92px minmax(0,1fr) 34px;align-items:center;gap:10px;font-size:15px}
+.cefr-bar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
+.cefr-bar i{height:12px;border-radius:3px;background:var(--paper-2);display:block}
+.cefr-bar i.on{background:var(--route)}
+
+/* ---------- outputs ---------- */
+.outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.out{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:18px;background:var(--white);text-decoration:none;color:var(--ink);border:2px solid transparent}
+.out:hover{border-color:var(--route);color:var(--ink)}
+.out svg{width:34px;height:34px;flex-shrink:0;margin-top:2px}
+.out b{display:block;font-size:17px;line-height:1.3}
+.out small{display:block;color:var(--ink-soft);font-size:15px;margin-top:6px;word-break:break-word}
+
+/* ---------- CV download ---------- */
+.cv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center;background:var(--highlight);border-radius:28px;padding:48px}
+.cv h2{font-size:clamp(32px,4vw,46px)}
+.cv p{margin-top:14px;max-width:52ch;font-size:18px}
+.cv-doc{width:150px;height:190px;background:var(--white);border-radius:10px;box-shadow:10px 10px 0 var(--ink);padding:18px;display:flex;flex-direction:column;gap:8px}
+.cv-doc i{display:block;height:7px;border-radius:4px;background:var(--paper-2)}
+.cv-doc i.h{height:12px;width:70%;background:var(--ink)}
+.cv-doc i.b{background:var(--route);width:45%}
+.cv-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+
+/* ---------- footer ---------- */
+footer{padding:72px 0 64px}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.foot h2{max-width:14ch}
+.contacts{display:flex;flex-direction:column;gap:10px;font-size:17px}
+.contacts a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
+.contacts svg{width:20px;height:20px}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .map-grid{grid-template-columns:1fr}
+  .wp{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wp-step::after{display:none}
+  .bring{grid-template-columns:1fr}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cv{grid-template-columns:1fr;padding:32px}
+  .cv-doc{display:none}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+  .route{display:none}
+  .g-row{grid-template-columns:130px minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .wp{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .nav{display:none}
+  .route{display:none}
+  .steps{grid-template-columns:1fr}
+  .pinlabel{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SVG icon sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-data" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+    <symbol id="i-story" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a3 3 0 0 1 3 3v12H7a3 3 0 0 1-3-3z"/><path d="M18 8h2v12"/><path d="M8 9h6M8 13h6M8 17h3"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2 4 2 4H5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.8 3.8 5.8 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.8-3.8-9S9.5 5.8 12 3z"/></symbol>
+    <symbol id="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" aria-label="Giusy Grieco, inizio pagina"><svg aria-hidden="true" style="color:var(--route)"><use href="#i-pin"/></svg>Giusy Grieco</a>
+    <nav class="nav" aria-label="Sezioni">
+      <a href="#mappa">Mappa</a>
+      <a href="#strumenti">Strumenti</a>
+      <a href="#progetti">Progetti</a>
+      <a href="#output">Output</a>
+      <a href="#cv">CV</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>Progetti europei per la cultura, dall’idea alla rendicontazione.</h1>
+      <p class="lead">Europrogettista ed EU Project Manager. Work Package Lead in Horizon Europe, con una formazione in Digital Humanities e New Media Art e progetti su patrimonio culturale e rigenerazione urbana.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#mappa"><svg aria-hidden="true"><use href="#i-map"/></svg>Esplora la mappa</a>
+        <a class="btn btn-line" href="assets/Giusy_Grieco_CV.pdf" download><svg aria-hidden="true"><use href="#i-download"/></svg>Scarica il CV</a>
+      </div>
+
+      <figure class="pipeline" aria-label="Il mio metodo in quattro passaggi: dati, storie, mappe, progetti">
+        <div class="steps">
+          <svg class="route" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true"><path d="M125 50 C 220 5, 280 95, 375 50 S 530 5, 625 50 S 780 95, 875 50"/></svg>
+          <div class="step"><span class="node"><svg aria-hidden="true"><use href="#i-data"/></svg></span><b>Dati</b><span>Fieldwork in 4 regioni europee, un dataset open in JSON, notebook Python.</span></div>
+          <div class="step"><span class="node"><svg aria-hidden="true"><use href="#i-story"/></svg></span><b>Storie</b><span>Ricerca tradotta per pubblici non specialistici, da Berlino a D4.1.</span></div>
+          <div class="step"><span class="node"><svg aria-hidden="true"><use href="#i-map"/></svg></span><b>Mappe</b><span>Ecosistemi di attori, gigamap, blueprint, architettura dell’informazione.</span></div>
+          <div class="step"><span class="node node-end"><svg aria-hidden="true"><use href="#i-flag"/></svg></span><b>Progetti</b><span>Un Work Package guidato fino alla consegna e al reporting UE.</span></div>
+        </div>
+      </figure>
+    </div>
+  </main>
+</div>
+
+<!-- ============ MAP ============ -->
+<section id="mappa" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Il percorso, su una mappa</h2>
+      <p class="lead">Sette luoghi, tre colori. Tocca un punto sulla mappa o un nome qui sotto per leggere la sua storia.</p>
+    </div>
+    <div class="map-grid">
+      <div id="map" class="map">
+        <svg class="map-svg" viewBox="0 0 760 820" role="img" aria-label="Mappa dell’Europa centro-meridionale con i luoghi del percorso"><path class="land" d="M343.5,657.9L343.1,658L343.1,657.8L343.1,657.6L343.5,657.6Z"/><path class="land" d="M760,363.7L758.3,363.3L754.8,363.7L751.3,365.2L747.7,365.4L743.7,363.4L743.2,363.6L741.7,363.9L731.6,361.5L730.7,361.1L730.2,361L728.8,360.8L721.3,361.1L714.2,356.2L712,356.1L710.4,358L709.1,360.3L704.2,362.4L702.9,363.3L702.2,362.7L701.9,360.7L702.3,359.1L701.6,357.5L699.7,355.7L699.2,355L696.9,355.1L696.2,355.2L696,355.2L692.8,353.6L690.7,350L687.3,348L684.8,347.4L683.7,345.8L683,343.7L682.1,342.1L682,342L681.5,339.5L680.7,339.3L680.6,339.2L677.3,339.6L677.6,331.1L683,325.1L684.2,321.9L686.2,315.2L687.7,312.1L689.4,309.5L690.8,307L691.3,304.8L692.8,304.5L696.9,306.5L700.6,307.5L701.7,306.5L702.1,305.3L701.9,304.4L699,301.4L697.1,299.6L697,298.5L697.6,295.9L698,293.1L697.6,290L695.5,283.1L695.1,280.1L697.1,276.5L703.4,268L705.5,264.9L708.4,261L716.3,251.7L721.3,246.2L724.6,243.2L729.6,238L731.7,235.3L740.7,233.5L741.7,230.9L743.5,228.2L744.7,227L744.8,222.3L743.2,216.5L741.9,214.5L740.9,213.1L741.5,211.8L742.5,211.4L743.7,211.2L745.2,209.9L745,208.4L741.1,204.7L739.5,201.8L736.9,194.5L731.7,186.9L730.1,184.4L729.8,182L730.6,179.7L729.8,176.7L728,172.9L728.3,172.5L728.1,167.8L729.5,166.7L731.6,166.1L734.4,166.4L736.9,167L740,169.2L740.9,168.9L745.9,164.8L751.3,158.6L752.8,155.2L754.1,153.5L758.7,152.6L760,152.5L760,363.7Z"/><path class="land" d="M243.1,385L244.1,385.6L246.5,387.9L246,391.7L243.2,397.9L241.7,402.8L241.6,406.7L241.8,408.4L242.3,408.4L245,408.7L246.4,408.7L250.6,409.7L254.1,411.2L254.8,412.8L255.2,414.7L259.3,417.4L264,419L265.6,418.5L271.5,412.3L273.8,413.3L275.2,416.7L275.1,418.3L273.4,424.9L273.2,428.5L274.6,430.7L274.7,432.5L274.3,434.2L272,434.4L268.9,433.4L266.2,430.6L264.1,431L262.4,431.7L261.5,434.4L260.8,437.5L261,439.3L262.3,440.6L263.3,443.6L263.9,447.3L264.5,449L263.9,449.7L262.3,450.2L260.9,449.8L258.4,445.3L257.3,443.6L255.5,443.3L252.1,444.4L247,446.9L244.9,446.9L243.2,446.3L241.6,444.3L240.2,440.2L239.7,437.6L238.7,437.7L235.5,436.9L234,437.9L234,442.1L233.6,447.4L232,450.7L227.4,456.5L225.8,459L225.1,460.8L225,462.4L225.7,465.1L226.6,467.7L225.8,469.3L223.5,470L221.7,468.4L221.1,465.7L217.4,461.8L219,458.6L218.8,457.7L212.7,456.1L210.1,453.7L206.4,449.4L205.6,447.6L205.9,441.6L205.6,440.1L205.1,439.4L203.4,439.4L200.9,441.5L198.6,444.6L193.8,448.2L193.3,448.9L195,452.3L194.8,453.6L191.1,459L190.4,460.8L185.5,464.2L183.3,465.5L176.6,463L174.7,462.7L171.6,464.4L167.4,465.9L160.6,467.6L158,466.3L156.9,465.2L156.3,463.6L154.5,460.8L152.6,459L151.2,457.1L149.5,455.1L148.3,453.4L149.8,447.9L148.7,446L148.1,443.2L148.5,441.3L147.8,440.9L141.6,439.8L136.4,440.2L132.8,442L129.7,445L129.4,445.7L129.6,446.3L131.1,449L128.6,452L124.7,454.3L121.9,454.6L120.7,454.1L120.7,450.9L122.9,449.8L125,447.7L125.6,444.8L125.9,442.8L123.8,440.3L124,438.8L125.4,435.9L126.1,433.3L127.3,431.2L131.5,427.5L135.8,423.9L136.4,420L136.8,415.3L137.4,414.1L143.3,411.3L144.6,410.2L145.4,408.6L149.9,403.3L154.5,398.1L155.4,396.3L156.1,395.2L156.1,394.4L155.7,393.7L153.4,393.3L152.7,391.6L155,388.6L158,386.8L160.9,386.8L162,387.5L161.9,388.5L163.1,389.6L165.3,389.9L167.9,389.6L170.7,388.4L172.3,385.8L173.1,383.7L177.3,381.4L180.2,382.6L188,382.9L193.8,382.3L197.4,380.7L201.9,380.7L204.9,381.6L205.4,381.5L206.2,381.3L207,380.5L209.8,379.8L210.2,379.1L210.1,378.4L209.6,378.1L206.1,378.4L204.8,377.9L204.5,376.6L205.6,374.3L208.1,372.6L210.3,372.1L211.8,372.6L215.7,375.9L216.5,376.1L217.1,375.5L217.9,375.1L219.3,375.8L220.6,377.9L220.9,378.2L229.4,377.4L231.3,377.4L237.1,381.2Z"/><path class="land" d="M0,759.4L11,751.1L15.1,748.6L23.9,745.8L25.2,746.2L24.1,747.9L24.1,748.6L25.2,749.4L25,750.7L23.9,751.8L23.4,753.9L23.4,753.9L26.7,755.4L30.2,754.1L32,754.5L33.9,755.2L34.3,758.1L32.7,761.2L30.4,764.4L28.4,767.9L26.8,771.9L23.7,774.3L20.9,775.7L14.9,772.8L11.5,772L10.5,770.9L9.6,766.4L8.1,765L5.8,764.4L3.8,765.5L1.2,767.9L0,766L0,759.4ZM62.9,751.6L62.3,752.1L51.8,746.9L48.3,746.4L47.4,745.6L47.5,742.9L47.8,741.7L54.9,741.1L60.6,743L63.7,748.2L63.9,749.1ZM0,636.1L3.5,637.2L6.4,637.4L6.5,636.4L7,634.9L8.1,634.3L9.7,634L12.1,633.3L14.7,632L17.3,631.5L20.1,632.4L23.6,633.2L25.7,633.2L26.6,636.1L28.3,637.3L28.9,639.8L26,641.1L24.1,641.3L23.6,645.7L24.4,646.9L26.1,648.1L26.6,649.4L27,655.8L23.5,659.7L18.5,664L0,674.7L0,636.1Z"/><path class="land" d="M691.3,304.8L690.8,307L689.4,309.5L687.7,312.1L686.2,315.2L684.2,321.9L683,325.1L677.6,331.1L677.3,339.6L676.5,340.3L664.7,343.1L663.1,342.7L661.5,341.1L660.6,339.8L660,339L659,336.6L657.7,334.9L655.7,333.6L653.8,332L651.5,332L645,334.2L640.6,334.4L637.7,333.7L633.7,332.3L626.1,332.1L620.7,333.3L620.2,334.9L615.4,345.3L608.3,349.2L602.1,353L600.4,353.8L597.3,352.6L593.8,350.3L591,349.1L588.9,349.6L586.5,352.2L585.5,354.9L578.6,356.9L566.4,357.9L562.2,360.5L560.8,363.7L560.7,366.1L561.8,368.1L560.5,370.5L560,371.5L551.4,372L540,372.7L533.2,372.6L526.7,372.4L522.4,370.3L517.1,366.3L511.5,361.1L510.9,360.9L510.1,360.3L506.5,360L505.7,360.3L503.6,358.6L502.9,356.3L499.6,350.4L495.9,340.6L495.9,337.7L497.2,334.6L498.6,332L498.7,330.1L499,329.6L500.1,325.5L502.7,320.1L505.2,316.9L507,315.9L510.7,316.8L517.2,317.6L522,316.9L526.6,314.5L529.1,312.4L531.3,310.1L531.9,308.6L532.9,308L536.8,306.7L537.9,305.2L538.4,302.3L538.8,299.1L539.5,296.8L540.5,295L547.6,290.9L548.2,289.4L549.3,288L551.4,286.4L553.4,284.1L555.5,282.7L558.2,282.8L560.8,282.5L562.8,281.7L563.7,281.6L567.3,282.4L567.9,284.9L568.3,287.7L574.6,287.5L578.1,281.6L579.8,280.9L582.8,278.9L584.6,277L585.9,278.2L587.9,282L589.9,285L591,286.2L591.1,287.1L592.3,287.7L594.6,288.1L596,289L596.5,291.8L596.5,294.4L595.8,296.2L595.4,297.9L597,298.5L599.4,297.9L601,296.9L605.8,299.1L607.6,294.4L609.4,291.9L612,290.8L614.3,289.3L616.4,288.3L617.7,288.3L618.4,288L620.2,288.1L622.2,288.5L625.1,288L628.9,289.2L631.4,291.3L633.7,292L636.5,291.9L638.3,290.7L641.1,286.6L643,286.6L646,285.9L650.4,286L660.3,286.9L662.9,288.5L669,290.5L671.7,292.8L672.8,295.7L673.4,297.6L679.7,300.5L689,304.4Z"/><path class="land" d="M483.8,436.7L480.9,435.5L477.1,435L476.5,435.6L475,436.3L474.3,437.5L474.8,442.3L473.9,443.1L469.7,442.6L468.3,443.1L466.1,446.4L463.8,447.8L460.9,448.8L458.7,450L455.9,451L453.6,451.6L452.6,453.1L452.1,454.6L452.2,456.2L454.6,459.2L455,462.4L454.7,466.3L454.1,468.4L453.2,469.8L447.3,471.6L441.2,474.8L441.1,475.5L443.8,478.4L443.9,479.1L441.7,480.7L441.4,482.4L441.7,484.2L442.9,486.1L443.3,487.9L440,489.1L435.5,488.7L430.2,486.3L428.2,486.6L426.4,487.9L424.6,487.3L422.5,485.9L419.6,482.8L418.1,480.8L417.6,478.9L416.8,478.5L415.7,479.1L414.7,481.6L411.9,486L409.9,487.1L407,486.9L402.8,487L400.2,487.4L396.9,485.8L396.2,486.1L396.2,487.1L394.9,488.8L393.1,489.8L383.9,487.4L382.7,485.4L384.8,484.5L387.6,481.9L389.5,482.3L391.8,481.7L393,480.7L391.3,477.4L387.6,473.4L385.6,471.9L382.9,470.9L382.4,469.8L383.9,463.5L383.4,462.6L380.3,462.9L379.6,462.2L379.3,461.1L379.6,459.6L381.7,457.1L384,455L384.7,453.8L384.5,452.8L381.6,451.8L379.7,450.8L378.3,450.5L377.3,451L376.6,450.4L375.9,448.6L376.6,445.8L379.2,443.2L382.2,441L384.8,439.2L386.1,438.5L386.9,435.7L388.4,435.9L391.5,436.1L394.8,436.8L397.9,437.6L400.6,438.6L406.5,439.7L411.7,440.3L413.3,440.9L414.5,440.8L416.1,441.7L417.1,441.1L417.8,439.9L420.6,438.5L423.3,436.7L425.1,434.5L426.2,432.6L427.9,431.4L429.9,431L431.6,430.4L439.1,429.5L446.8,430.2L450.5,429L453.5,426.7L457.8,426.1L458.1,426.1L464.6,427.8L465.1,426.8L465.4,426.4L465.2,421.6L467.4,419.4L469.3,418.4L475.9,418.8L476.8,420.3L477,422.5L477.6,425.6L478.8,426.5L479.4,427.7L479.3,429.8L480.5,431.3L483.5,435.6Z"/><path class="land" d="M697,547.6L695.7,548.5L694.4,549.7L693.5,551.9L693.4,555.4L688.9,558.1L687.2,558.7L686.4,560.5L685.3,565.6L685.4,569.5L686.1,571.4L686.3,573.1L687.8,575L689,578L689.9,582L691.9,585L696.7,588.1L699.2,589.8L700.9,592.3L702.3,594.6L706.4,597.7L706,599.8L705.2,601.9L704.3,602.9L702.3,605.6L700.3,607.2L697.1,612L692,612.2L690.8,612.6L688.8,613.9L687.9,616.3L688.8,618.2L688.7,620.1L687.8,623.9L689,627.9L690.8,629.8L691,630.9L690.8,632.7L688,636.5L687.3,637.9L684.6,638.6L683.7,638.3L682.3,636.9L681,636.6L677.8,638.1L674.5,639L671.9,638.3L669.4,638.2L667.7,638.9L666.3,639.1L663.7,640.8L659.7,641.9L657.7,641.7L656.9,640.2L656.2,638L656.6,636.9L659.3,635.2L659.7,633.5L663.5,625.5L664.2,622.9L664.2,622L663.3,621.4L661.1,621.4L651.7,618.2L652.2,614.4L649.5,612.4L646.5,610.6L646,608.6L642.7,604.5L640.3,602.2L637.2,601L634.5,599.3L633,598.3L632.3,596.4L632.3,595.3L631.4,594.1L630.1,594.3L628,595.8L625.3,597.1L624.8,598.1L625.8,600.4L626.6,601.8L626.2,603.2L625.3,604.9L620.2,608.7L619.6,610L620.6,612.2L620,613.2L615.8,614.6L615.9,613.5L615.5,611.6L613.2,609.5L609.7,608L601.9,602.7L599,601.9L596.3,601.4L592.6,598.7L590.6,598.3L588.4,596.5L583.7,590.3L579.7,586.9L577,585.3L576.2,583.5L576,581.9L576.1,581.3L578.2,578.8L579.8,578.5L581.8,578.4L583.2,579.7L585,579.9L586,578.3L586.5,576.1L586.3,573.2L581.9,566.4L578.3,561.7L577.8,560.7L578.7,559.8L579.9,559.4L581.3,559.7L584.9,560L588.4,559.6L589.5,558.5L589.5,557L588.2,555.5L584.3,551.6L581,548.2L577.5,545.5L574.6,544.5L573.9,543.2L573.5,541.7L573.9,539.1L574,535.8L574.6,533.7L577.1,529.7L579.4,525.4L580.9,521.4L581.7,517.6L581.4,516.5L580.2,515.7L577.6,514.9L574,515.7L570.9,517L569.6,517.1L569.3,515.4L569.8,514.6L570.8,514.7L571.5,515.1L572.4,514.3L572.9,512L571.6,504.1L573.9,503.3L574,502.2L574.1,501.2L576.5,502.5L579.8,502.5L582.8,502.3L583.3,501.5L583.2,500.3L582.5,499.5L581.5,498.7L580.8,497.6L578.8,497.2L572.6,494.3L569.6,491.2L569.6,487.9L570.5,486.1L571.6,485.5L571.4,484.9L567.8,483.4L566.5,481.3L567.7,478.6L565.8,473.1L563.9,469.7L565.8,468.2L566,466.2L566.2,465L566.9,465L570,463.6L571,462.5L571.7,461.1L572.4,460.8L574.5,462.2L576.6,462.4L578.9,461.4L580.8,460.2L582.9,459.1L583.9,458.4L585.1,457.2L587.7,453.9L590.6,453.2L594.3,454L598.5,454.4L601.6,453.6L609.4,454.6L611.1,455.3L612.2,456.2L614.3,459.1L616.3,462.8L619,464.5L622.2,466.6L623.8,468.1L626.3,472.5L628.3,474.7L628.9,474.6L629.5,474L630,473.6L630.5,474L630.5,475.4L630.6,478.3L630.3,481.5L630.9,484.5L630.9,485.4L630.5,486.3L630.5,487.1L631.3,487.8L633.9,489.8L636.3,492.9L639.1,495.1L641.8,496.4L643.4,496.5L646.1,499L651.5,500.8L653.2,501.4L654.3,502.4L655.2,503.6L655.2,504.7L654.4,505.3L653.2,507L652.8,509.1L652,509.7L651.1,509.7L650.5,510.3L650.6,511.2L651.3,512L652.5,512.8L654.6,513.5L656.7,514.7L656.7,515.6L656.2,516.5L653.6,516.9L651.6,517.1L650.6,517.4L650.7,519.2L656.3,521L658.9,522.7L660.2,524.8L663.7,526.3L669.6,526.9L673.7,529.2L675.9,533L679.6,532.1L684.8,526.4L689.9,525L694.9,527.7L697.6,529.9L698.1,531.6L696.9,532.3L694.1,532L691.8,533.1L690,535.5L689.8,538.1L691,540.9L692.8,542.8L695.1,543.9L696.2,545.3L696.5,547.1Z"/><path class="land" d="M345.1,563.8L343,564.1L342,562.1L343.5,559.9L345.7,559.5L346.1,561.3Z"/><path class="land" d="M696.3,0L696.1,2.5L697.7,7.8L699.1,10.6L698,11L678.5,10.4L660.2,9.5L643.2,8.6L626.8,7.7L611.1,6.8L601.3,6L591.6,5.3L590.2,4.6L595,0L696.3,0Z"/><path class="land" d="M760,569.5L756.5,568.8L749.4,570.3L739.9,569.2L725.6,566L715,565L704.4,566.9L702.7,565.5L702.2,563.9L702.7,561.5L704.2,559.6L706.6,558.2L708,556.8L708.1,555.3L705.3,552.9L699.5,549.6L697,547.6L696.5,547.1L696.2,545.3L695.1,543.9L692.8,542.8L691,540.9L689.8,538.1L690,535.5L691.8,533.1L694.1,532L696.9,532.3L698.1,531.6L697.6,529.9L694.9,527.7L689.9,525L684.8,526.4L679.6,532.1L675.9,533L673.7,529.2L669.6,526.9L663.7,526.3L660.2,524.8L658.9,522.7L656.3,521L650.7,519.2L650.6,517.4L651.6,517.1L653.6,516.9L656.2,516.5L656.7,515.6L656.7,514.7L654.6,513.5L652.5,512.8L651.3,512L650.6,511.2L650.5,510.3L651.1,509.7L652,509.7L652.8,509.1L653.2,507L654.4,505.3L655.2,504.7L655.2,503.6L654.3,502.4L653.2,501.4L651.5,500.8L646.1,499L643.4,496.5L641.8,496.4L639.1,495.1L636.3,492.9L633.9,489.8L631.3,487.8L630.5,487.1L630.5,486.3L630.9,485.4L630.9,484.5L630.3,481.5L630.6,478.3L630.5,475.4L630.5,474L630,473.6L629.5,474L628.9,474.6L628.3,474.7L626.3,472.5L623.8,468.1L622.2,466.6L619,464.5L616.3,462.8L614.3,459.1L612.2,456.2L613.5,455L621.3,453.3L624.9,455L626.7,454.4L628.3,453L629.2,452L629.3,450.8L630,449.4L632.7,448.7L639.7,449.5L642.5,447.6L643.5,446.4L644.2,444.1L644.9,442.1L647.4,441.1L647.4,439.3L647,437.4L648.5,433.1L649.4,431.3L650.7,430.6L652.5,429.3L655.4,426.5L654.7,424L655.3,422.2L658.4,417.7L660.8,413.4L660.8,411.2L661.1,409.3L663.1,407.3L665.4,404.6L668.2,396.1L669.3,394.7L671.2,393.1L672.5,391.5L672.7,386L674,384.4L676.6,382.5L679.1,379.6L681.2,376.2L682.7,374.5L684.8,374.2L687.2,372.7L689.7,372.3L692.1,372.9L693.8,372.6L696.1,370.9L702.1,364.5L702.9,363.3L704.2,362.4L709.1,360.3L710.4,358L712,356.1L714.2,356.2L721.3,361.1L728.8,360.8L730.2,361L730.7,361.1L731.6,361.5L741.7,363.9L743.2,363.6L743.7,363.4L747.7,365.4L751.3,365.2L754.8,363.7L758.3,363.3L760,363.7L760,569.5Z"/><path class="land" d="M554.7,0L555.3,1.4L558,6.2L563.8,9.9L568.6,11L583.4,8.9L588.7,6L590.2,4.6L591.6,5.3L601.3,6L611.1,6.8L626.8,7.7L643.2,8.6L660.2,9.5L678.5,10.4L698,11L699.1,10.6L701.1,8.3L703.5,8.6L706.4,10L707.8,11.1L708.3,12.4L708.6,13.7L710.2,14L713.1,15L716.9,17.5L719.9,19.8L722.8,23.2L723.8,27L723.8,31.3L723.6,34L723.9,35.1L727.8,55L734.4,73.9L736.8,83.1L737.8,88L738.5,94.9L738.8,99.9L738.8,102.7L738.3,106.4L736.3,108.7L723.8,115.1L721.3,117L717.7,122L714.2,127.1L713.5,128.9L713.2,130L714,131.7L718.4,134.4L723,136.6L724.5,138.3L727.7,140.3L729,142.2L729.7,143.8L729.6,147.6L728.1,152.8L728.7,156.7L727.2,159.3L726,162.2L725.7,167.3L728,172.9L728,172.9L729.8,176.7L730.6,179.7L729.8,182L730.1,184.4L731.7,186.9L736.9,194.5L739.5,201.8L741.1,204.7L745,208.4L745.2,209.9L743.7,211.2L742.5,211.4L741.5,211.8L740.9,213.1L741.9,214.5L743.2,216.5L744.8,222.3L744.7,227L743.5,228.2L741.7,230.9L740.7,233.5L731.7,235.3L729.6,238L724.6,243.2L721.3,246.2L716.3,251.7L708.4,261L705.5,264.9L703.4,268L697.1,276.5L695.1,280.1L695.5,283.1L697.6,290L698,293.1L697.6,295.9L697,298.5L697.1,299.6L699,301.4L701.9,304.4L702.1,305.3L701.7,306.5L700.6,307.5L696.9,306.5L692.8,304.5L691.3,304.8L689,304.4L679.7,300.5L673.4,297.6L672.8,295.7L671.7,292.8L669,290.5L662.9,288.5L660.3,286.9L650.4,286L646,285.9L643,286.6L641.1,286.6L638.3,290.7L636.5,291.9L633.7,292L631.4,291.3L628.9,289.2L625.1,288L622.2,288.5L620.2,288.1L618.4,288L617.7,288.3L616.4,288.3L614.3,289.3L612,290.8L609.4,291.9L607.6,294.4L605.8,299.1L601,296.9L599.4,297.9L597,298.5L595.4,297.9L595.8,296.2L596.5,294.4L596.5,291.8L596,289L594.6,288.1L592.3,287.7L591.1,287.1L591,286.2L589.9,285L587.9,282L585.9,278.2L584.6,277L582.8,278.9L579.8,280.9L578.1,281.6L574.6,287.5L568.3,287.7L567.9,284.9L567.3,282.4L563.7,281.6L563.6,280L562.8,276.2L555.5,268.5L554.5,265.3L554.9,264.1L554.4,262L552.8,260.8L547,259.3L545.5,260.2L544.1,259.3L542,257.5L538.4,256L538,255.1L536.7,253.8L535.9,253.7L535.5,254.5L534.4,255.6L530.7,257.1L529.2,256.4L527.9,255.2L526.2,252.5L524,250.2L522.2,249.4L521,248.1L520.8,247.1L525,245.2L525.9,243.2L525.4,239.6L524.8,239.1L523.1,240.3L519.7,241.3L516.5,241.9L514.8,241.9L505.8,235.3L499.8,233.2L496.4,232.6L496,233.3L497.6,237L500.3,241.6L500.2,242.8L497,244.7L495.1,245.5L492.9,247.1L491,249.4L489.5,250.3L488.1,250.1L486.7,249L482.9,242.2L478.1,237L477.6,235.8L476.2,235.5L474,234.4L473.3,232.7L474.4,231.1L475.8,229.5L478.4,228.6L479.1,227.7L479.6,226.4L480.5,224.6L480.2,224.1L478.5,222.1L475.8,220.2L468.3,221.6L466.4,222.6L465.2,221.3L464.4,219.4L462.4,219.1L459.9,217.3L456.8,215.6L453.8,215.1L447.6,212.7L445.3,212.6L443.9,211.7L442.4,209.8L441.2,207.8L440.6,203.7L436,201.8L431.4,200.6L431.1,201.3L431.3,205.4L431,207.6L428,209L425.1,209.2L425.3,208.4L428.8,201L430.4,196.2L432.3,187.6L430,180.7L429.4,177.5L428.4,176L422.2,172.6L421.7,171.5L422.7,166.8L422.2,164.9L420.7,162.9L418.8,158.9L417.9,155.4L420.5,151.4L421.1,148.5L422.2,144.4L423,142.2L423.1,141.5L421.5,139.9L421.1,137.7L421.5,134.5L420.6,132L418.4,130.6L417,128.5L416.3,125.9L416.9,121.8L418.5,116.3L414.9,109.8L406,102L401.6,96.5L402,93.3L403.9,90.6L407.3,88L409.9,83.5L411.3,78.1L411.4,77.1L411.6,73.2L407.5,57.5L406.8,53.5L406.4,48.7L406.1,47.4L414,50.7L417.3,52.6L416.9,50.5L416.3,48.7L416.6,46L416.4,41.9L409.3,39.9L404.6,39.2L404,36.3L404.5,34.5L405.9,35.6L410.4,36L421.8,30.6L441.6,23.4L462.6,16.7L467.6,16L472.6,14.5L474.3,12.1L476.2,10.3L479,5.9L484.3,0L554.7,0Z"/><path class="land" d="M121.4,215L118,214.9L114.7,214.8L113,214.5L111.1,213.7L110.3,212L109.3,210L109.5,208.7L112.6,205.2L113.1,204.1L112.8,203.7L113.1,202L115.5,196.7L115.7,194.5L114.7,193L113.1,192.1L108.2,190.5L105.8,188.3L104.8,186.3L103.7,185.7L102.1,186.4L98,187.2L94.7,186.1L90.7,182.4L89.8,179L89.3,176.5L88.3,175.6L87,176.9L85.4,179L82,179.2L81.1,178.8L80.9,177.6L80.8,176.5L79.8,175.2L78.9,174.4L74.7,178.3L73.1,178.2L71.1,176.7L70.1,175.3L68,176.2L66,177.9L66.8,181.2L65.6,181.8L63.3,181.5L60.6,180.2L57.6,179.3L53,177L46.7,178.9L42.2,176.6L38.6,176.5L36.3,174.6L33.9,171.7L35.6,169.6L37.2,169L43.9,168.6L48.9,169.8L57.7,176.4L59.9,176.3L62.3,175.5L61.1,173.7L58.8,172.8L55.6,171.1L53,168.6L59.1,167.8L58.2,166.6L57.5,164.3L51,156.7L52.1,154.6L53.7,150.1L55.7,146.4L57.3,145.5L60.1,142.8L65.8,135L69.5,128.7L72.2,121.3L76.2,100.4L77.4,96.8L79.3,92.8L81.8,93.6L83.4,94.7L89.3,91.8L99.6,84L102.6,77.2L105.6,74.1L117.3,67.9L123.8,66.1L133.8,65.6L141.1,64.5L149.8,64.1L153.2,67.9L155,70.7L158.1,72.2L163,73.3L162.6,78.8L162.7,89.6L162.3,91.5L160.1,96L157.9,104L157.3,109.4L156.6,110.4L147.5,110.3L146.2,111.3L146,112.4L146.5,113.8L146.2,115.2L145.5,116.3L145.9,118L147.5,120L150.3,121.3L153.4,121.4L155,121.2L156.1,122.5L157.4,124.7L157.3,127.5L156.8,131.1L155.4,134.6L151.2,138.5L149.2,139.8L147.5,140.6L146.6,141.6L146.2,142.9L146.4,144.1L149.3,147.2L149.2,147.9L148.3,149.5L147.2,151.1L139.5,154.3L136.3,154L134.6,155.5L134,155.9L132,154.4L127.4,152.7L125.8,153.3L124.8,154.3L121.9,155.4L119.9,157.1L119.9,159.3L123.5,165.1L124.8,166.3L124.8,168.5L126.5,171.2L128.4,174.5L128.5,176.6L128.4,178.9L127.4,181.9L124.3,189.1L124.3,190.5L124.5,191.6L125.6,191.9L126.4,192.4L126.1,193.4L120.3,198.3L119.6,199.2L117.2,198.9L116.8,199.8L117.1,201.1L118.1,202.3L120.2,202.9L121.9,204.1L123.4,206.6ZM60.6,180.2L60.1,182.3L58.8,184.6L54.2,187.8L49.4,190L47,189.8L45.3,188.6L44.4,187.5L41.8,186.3L38.4,185.7L36.1,187L34.6,188.1L33.3,187.9L32.3,187L31.4,185.5L30.4,180.7L33,179.8L38.7,179.4L43.1,181.1L48.8,181.9L53.2,179.6L56.7,181.6ZM133.2,60.1L128.4,62.1L127.1,61.7L127.5,61.1L131.7,59.9ZM119.3,63.1L112.5,64L110.1,63.3L109.8,62.7L111.6,62.3L117.5,62.2L119.2,62.8ZM91.1,71.8L84.6,76L84.1,75.4L88.2,71.7ZM98.5,67.3L95.3,67.8L93.8,67L101.6,64.7L106.4,64L107.3,64.3ZM83.4,85.5L79.9,89.6L77.8,88.4L77.3,87.5L78.3,84.3L83.4,79ZM51,160.7L54.5,163.7L55.1,164.6L55.3,165.7L51.1,166.8L46.5,163.2L43.6,164L42.5,162.3L42.5,161.2L45.6,160.3ZM147,56L143.9,56.2L144.7,54.7L147.7,53.4L149.3,53.4Z"/><path class="land" d="M576.1,581.3L576,581.9L576.2,583.5L577,585.3L579.7,586.9L583.7,590.3L588.4,596.5L590.6,598.3L592.6,598.7L596.3,601.4L599,601.9L601.9,602.7L609.7,608L613.2,609.5L615.5,611.6L615.9,613.5L615.8,614.6L611.3,616L610.4,618L608.3,617.8L605.7,617.8L604.9,619.1L606.1,621.3L607,623.8L606.3,627.3L606.1,627.8L605.5,627.6L601.8,629.6L599,630.6L596.5,631.1L595.4,630.1L594.8,628.7L594.9,624.9L594.4,623.6L593.7,623.1L592,624L590,626.9L588.1,630.3L585.4,633.9L583.2,637.3L580.8,641.6L579.1,645.2L580.8,647.2L581.9,650L581.5,652.1L581.9,653.3L581.3,657L581.2,659.3L575.8,655.6L573.6,650.4L565.8,641.6L556.7,635.6L556.3,634.7L556.7,633.5L557.2,632.6L555.4,632.6L554,633.3L552.8,633L551.4,630.9L550.1,628.9L550.1,627.1L550.7,627L551.5,626.2L553.4,624.4L553.8,623.3L553.6,621.8L551,617L550.7,613.9L550.3,608L550.8,606.6L551.8,605.9L556.5,605.2L556.4,600.6L556.6,599.2L557.6,597.3L558.2,595.6L560.8,593.1L564.3,590.1L565.8,590L567.2,590.4L568.6,593L570.4,592.7L570.6,589.6L568.5,585.6L567.4,583L567.8,581.6L568.5,580.8L570.4,581.3L572.1,582.1L573.4,581.6L575.1,581.1Z"/><path class="land" d="M171.3,571L169.2,571.8L169.3,570.8L169.8,570.2L170.4,570L171.2,570.4Z"/><path class="land" d="M657.7,641.7L659.7,641.9L663.7,640.8L666.3,639.1L667.7,638.9L669.4,638.2L671.9,638.3L674.5,639L677.8,638.1L681,636.6L682.3,636.9L683.7,638.3L684.6,638.6L689.9,645.6L692.8,648.3L696.2,650.5L700.2,652L701.6,653.5L704,660.9L705.3,663.6L706.9,664.5L707.3,665.3L707.4,666.3L705.5,671.4L704.8,682.9L704.3,683.8L702.3,683.8L699.7,684L698.7,684.9L697.7,691L693.5,692.8L689.8,693.8L686.6,693.6L681,692.2L679.1,692L677.5,692.8L672.5,693.2L670.3,694.3L665.1,701.4L659.9,704L658.2,705.1L654.1,703.6L652.2,703.4L649.5,705.2L643.4,705.5L641.8,705.8L637.1,706L636.8,705.1L636,703.6L633.9,702.9L629.4,703.5L628.3,702.5L626.4,696.4L625.1,695.4L623.5,693.3L620.7,686.7L620.6,683.8L620.8,681.3L619.4,675.3L620.2,673.8L621.6,672.9L621.6,670.5L621.2,666.8L623,659.6L623.3,659.1L623.8,659.4L627.8,660L628.8,659.1L629.5,657.6L629.7,652.3L630.6,649.9L640.3,645.3L643.2,645.1L645.4,647.3L647.1,648.6L648.1,648.6L648.5,647.2L649.7,644.5L651.7,643Z"/><path class="land" d="M125.8,249.1L125.4,250.5L125.5,253.7L126.5,256.9L128.7,260.1L130.5,262.4L132.8,264.2L136.9,266L138.5,266.4L138.7,268.7L138.4,271.2L137.1,272.6L135.7,274.5L134.7,276.9L133.7,281.5L133.6,284.7L131.2,283.5L130,282.5L127.9,282.3L125.8,283L124.3,284.7L122.1,285.1L120.3,284.7L119.2,283.5L118.3,282.7L115.6,282L114.5,280.2L115.4,279.4L116.1,278L116.7,276.3L117.6,274.5L115,269.9L114.4,268.4L112.3,265.8L112.3,264.5L112.8,263.2L112.6,262.2L112.9,259.9L114.4,257.7L115.4,254.9L117.1,251.1L120.9,246.6L123.5,247.3L124.8,247.3L125.5,248.9Z"/><path class="land" d="M760,34.5L758.1,35.6L752.5,37.9L749.8,36.3L748.2,34.5L745.2,34.8L741.9,35.6L739.7,35.2L737.3,35.3L732.4,36.8L726.5,36.3L723.9,35.1L723.6,34L723.8,31.3L723.8,27L722.8,23.2L719.9,19.8L716.9,17.5L713.1,15L710.2,14L708.6,13.7L708.3,12.4L707.8,11.1L706.4,10L703.5,8.6L701.1,8.3L699.1,10.6L699.1,10.6L697.7,7.8L696.1,2.5L696.3,0L760,0Z"/><path class="land" d="M245,408.7L242.3,408.4L241.8,408.4L241.6,406.7L241.7,402.8L243.2,397.9L243.6,398.7L243.7,399.7L244.1,400.8L244.2,402.2L244.7,403.6L245.7,404.9L246,406.1L245.5,407.7Z"/><path class="land" d="M615.8,614.6L620,613.2L620.6,612.2L619.6,610L620.2,608.7L625.3,604.9L626.2,603.2L626.6,601.8L625.8,600.4L624.8,598.1L625.3,597.1L628,595.8L630.1,594.3L631.4,594.1L632.3,595.3L632.3,596.4L633,598.3L634.5,599.3L637.2,601L640.3,602.2L642.7,604.5L646,608.6L646.5,610.6L649.5,612.4L652.2,614.4L651.7,618.2L661.1,621.4L663.3,621.4L664.2,622L664.2,622.9L663.5,625.5L659.7,633.5L659.3,635.2L656.6,636.9L656.2,638L656.9,640.2L657.7,641.7L651.7,643L649.7,644.5L648.5,647.2L648.1,648.6L647.1,648.6L645.4,647.3L643.2,645.1L640.3,645.3L630.6,649.9L629.7,652.3L629.5,657.6L628.8,659.1L627.8,660L623.8,659.4L623.3,659.1L623.9,657L623.7,652.6L621.8,645.3L620.6,642.8L617.9,640.4L615.9,638.9L612.2,637.5L610.3,633.5L607.5,628.8L606.1,627.8L606.3,627.3L607,623.8L606.1,621.3L604.9,619.1L605.7,617.8L608.3,617.8L610.4,618L611.3,616Z"/><path class="land-it" d="M343.5,657.9L343.5,657.6L343.1,657.6L343.1,657.8L343.1,658ZM345.1,563.8L346.1,561.3L345.7,559.5L343.5,559.9L342,562.1L343,564.1ZM459.7,820L460,819.8L462.8,811.9L461.9,806.2L463.6,803.6L465.1,801.9L468.3,800.8L472.9,799.8L473.3,791.7L469.8,788.1L468.6,783L466.9,773.4L461,761.2L457.9,750.3L455.6,745L451.9,742.1L445.2,742.2L441.8,741.4L429.9,733.7L429.2,732.5L429.2,730.6L431.1,727.4L429.9,723.4L428.4,719.4L426.2,716L423.6,714.3L418.3,715.4L416.4,716.2L413,715.9L410.4,717.4L409,717.5L413,711.5L411.9,710.2L407.8,707.8L402.3,707.4L400.8,707L399.8,708.6L398.8,707.8L398.9,705.1L392.3,693.3L388,688.4L385.9,687.5L381.9,688.6L375.2,686.4L371.3,686L369.2,686.5L365.8,688L364.2,687.1L363.6,685.5L357.6,680.5L350.1,677.7L335.4,661.9L331,656L321.7,649.4L315.8,639.8L311,636.4L304.1,633.5L302.5,633.9L300.3,634.9L298.7,635.1L297.5,633.9L298.7,632.6L300.2,632L299.7,628.3L291.8,618.8L287.1,615.7L285.8,613.8L284.8,611.2L283.9,609.5L281.6,608.5L279.8,608.7L277.2,608.1L277.3,603.4L277.8,599.9L277.4,596.9L274.9,589L270.5,582.2L268,566.1L265.9,561.5L261,558L250.1,554.2L235,543.7L231.8,543.5L222.6,539.4L216.9,538.8L209.6,542.4L200.7,552.5L193.3,562.9L190.7,564.9L181.4,568.5L173.1,570.2L173,567.5L172.8,565.5L174.1,563.3L176.5,560.7L178.6,557.4L179.5,555L179.1,553.5L178.1,551.1L176.7,551L168.9,552.9L167.1,552.4L161.2,549.4L155,545.5L152.7,542.9L151.8,540.2L152.4,538.4L151.9,536.8L150.7,534.5L151.8,531.9L153.8,528.6L154.8,526.4L156.4,525.8L157.1,524.5L155.9,519.1L155.2,518.3L154,517.6L152.3,517.5L149.3,516.4L147.1,514.6L146.6,512L145.5,509.7L143.5,507.4L143.4,505L145.5,503.7L148.6,503.6L150.7,504.2L155.5,500.3L157.3,499.9L158.9,499.1L160.1,493.7L161.2,492.1L161.5,491.2L160.5,490L156.6,486.2L154.8,482.3L152.1,477.9L149.5,476L149,474.4L148.8,472.4L149.5,470.8L154,468.2L156.9,465.2L156.9,465.2L158,466.3L160.6,467.6L167.4,465.9L171.6,464.4L174.7,462.7L176.6,463L183.3,465.5L185.5,464.2L190.4,460.8L191.1,459L194.8,453.6L195,452.3L193.3,448.9L193.8,448.2L198.6,444.6L200.9,441.5L203.4,439.4L205.1,439.4L205.6,440.1L205.9,441.6L205.6,447.6L206.4,449.4L210.1,453.7L212.7,456.1L218.8,457.7L219,458.6L217.4,461.8L221.1,465.7L221.7,468.4L223.5,470L225.8,469.3L226.6,467.7L225.7,465.1L225,462.4L225.1,460.8L225.8,459L227.4,456.5L232,450.7L233.6,447.4L234,442.1L234,437.9L235.5,436.9L238.7,437.7L239.7,437.6L240.2,440.2L241.6,444.3L243.2,446.3L244.9,446.9L247,446.9L252.1,444.4L255.5,443.3L257.3,443.6L258.4,445.3L260.9,449.8L262.3,450.2L263.9,449.7L264.5,449L263.9,447.3L263.3,443.6L262.3,440.6L261,439.3L260.8,437.5L261.5,434.4L262.4,431.7L264.1,431L266.2,430.6L268.9,433.4L272,434.4L274.3,434.2L274.7,432.5L274.6,430.7L273.2,428.5L273.4,424.9L275.1,418.3L275.9,418.9L279.4,418.9L283.2,419.3L285.6,422L287.9,422.9L291.4,423.1L293.6,422.8L294.8,421.8L296.1,418.7L298.5,414.7L302.3,412.8L308.8,412.4L312.1,411.7L315.5,411.8L317.9,412.4L320.6,412.3L327.2,409.6L334.2,407.4L335.2,407.7L335.3,408.5L334.1,410.1L332.8,412.3L333.7,414.8L337.5,419.8L339.6,423.7L341.8,426.5L344.9,428L348.9,429L352.4,429.3L356.1,430.4L368.5,433.1L374.9,433.8L379.7,433.9L386.9,435.7L386.1,438.5L384.8,439.2L382.2,441L379.2,443.2L376.6,445.8L375.9,448.6L376.6,450.4L377.3,451L378.3,450.5L379.7,450.8L381.6,451.8L384.5,452.8L384.7,453.8L384,455L381.7,457.1L379.6,459.6L379.3,461.1L379.6,462.2L380.3,462.9L383.4,462.6L383.9,463.5L382.4,469.8L382.9,470.9L385.6,471.9L387.6,473.4L391.3,477.4L393,480.7L391.8,481.7L389.5,482.3L387.6,481.9L389.7,480L384.4,473L382.1,473L378.8,476L369.9,472.9L368.2,474.2L366.9,476.6L363.8,479.5L359.5,480.8L354.5,484.1L349.4,486.4L345.5,488.2L343.2,487.8L346.8,484.1L345.2,484L340.5,486.6L337.8,488.9L336.9,492.7L336.1,499L338.2,500.6L341.9,508.8L346.3,512.3L345.5,515.7L344.4,518.3L341.6,520.5L339.3,518.9L337.9,518.9L336.9,524.3L338.9,538.4L342,548.3L345.1,552.5L352.2,559.3L359.6,562.8L373,574L380.3,577.5L382.2,579.5L386.6,588.1L390.5,598L394.6,613.5L397.5,621.1L403.5,629.6L415.9,641.9L427.1,650.8L437.5,656.3L445.7,657.2L464.9,656L468.2,656.5L471.8,658.1L472.6,661.8L471.3,664.4L467.2,667L463.1,670.7L462.6,675.7L466.5,679.3L485.1,688.6L504.1,696.4L510,700.3L516.8,706.5L533.4,714.9L536.2,719L546.3,727.8L550.8,734.6L551.7,739.8L549.6,745L548.6,748.8L546.8,752.5L542.5,751.1L537.7,747.3L530.3,731.9L516.9,730.3L514.2,729.2L509.4,726.5L509.1,724.8L507.9,722.6L506.8,721.8L501.6,721.3L498.1,723.8L493.9,729.8L489.2,738.3L484.3,750.8L484.1,755.8L486.7,760.7L494.5,763.4L500.5,767.7L504.4,772.2L504.8,783L506.5,789.2L503.9,792.7L498.8,791.8L492.1,794.1L487.3,798L485.3,801.7L485.8,811.5L484.8,815.2L478.6,820L459.7,820ZM273.1,613.2L274.2,615L274.3,616.1L273.6,617.3L273.9,620L271,617.7L266.6,618.8L264,618.6L263.3,616.6L263.9,615.4L268,615.2L269.3,614.6L271.8,614.8ZM395.1,712.6L393.6,713L392.7,712.5L392.2,711.8L392.8,710L395.9,711.1L395.8,712ZM246.8,704.6L248.5,707.5L252.4,719.4L252.7,721.9L252,724.6L251,726.4L247.2,732.4L247.8,737.3L249.1,740.4L249.4,743.7L248.6,747.9L246.3,773.4L245.2,777.9L244.4,781.7L241.8,783L238.4,781.7L234.1,779.5L232.2,779.7L230.2,780.4L228.6,779.7L226.9,778.5L225.8,787.2L223.8,790.7L221,793L218.1,793.1L215.3,792.4L212.9,792.4L211.1,790.7L209.6,787.8L207.4,784.2L205,780L204.8,776.2L204.4,767.7L205,765.9L206,764.1L206.5,760.3L206.1,757L206.9,755.8L208.2,757L209.2,756.6L209.1,754.9L209.5,751.8L207.6,749.1L204.6,748.2L204.4,745.5L204.6,742.8L206.2,741L206.7,738.6L206.9,731.3L204.6,728.6L203.9,724.5L202.8,721.9L200.8,719.3L198.6,717.1L197.1,715.1L196.8,709.6L197.6,705.1L198.3,703.2L199,703.4L201.3,705.7L203.1,706.2L206.7,706.7L210.3,706L214.7,704L218.9,701.5L225,694.1L228.7,692.7L230.7,690.7L231.3,688.1L232.9,687.5L234.8,690L237.1,690.2L240.7,692.3L242.2,694.4L243.6,696.8L244.8,697.8L246.2,698.4L246.4,699L245.3,699.5L244.1,702.3L244.8,703.1ZM207.1,786.1L205.1,790.5L203,787.4L202.9,784.7L203.3,784L205.7,785.1ZM200.4,697.4L199.3,699.4L197.7,699.3L198.3,697.8L199.8,694.7L201.7,693.7L202.4,694.5L201.5,696.4Z"/><path class="land" d="M677.3,339.6L680.6,339.2L680.7,339.3L681.5,339.5L682,342L682.1,342.1L683,343.7L683.7,345.8L684.8,347.4L687.3,348L690.7,350L692.8,353.6L696,355.2L696.2,355.2L696.9,355.1L699.2,355L699.7,355.7L701.6,357.5L702.3,359.1L701.9,360.7L702.2,362.7L702.9,363.3L702.1,364.5L696.1,370.9L693.8,372.6L692.1,372.9L689.7,372.3L687.2,372.7L684.8,374.2L682.7,374.5L681.2,376.2L679.1,379.6L676.6,382.5L674,384.4L672.7,386L672.5,391.5L671.2,393.1L669.3,394.7L668.2,396.1L665.4,404.6L663.1,407.3L661.1,409.3L660.8,411.2L660.8,413.4L658.4,417.7L655.3,422.2L654.7,424L655.4,426.5L652.5,429.3L650.7,430.6L649.4,431.3L648.5,433.1L647,437.4L647.4,439.3L647.4,441.1L644.9,442.1L644.2,444.1L643.5,446.4L642.5,447.6L639.7,449.5L632.7,448.7L630,449.4L629.3,450.8L629.2,452L628.3,453L626.7,454.4L624.9,455L621.3,453.3L613.5,455L612.2,456.2L611.1,455.3L609.4,454.6L601.6,453.6L598.5,454.4L594.3,454L590.6,453.2L587.7,453.9L585.1,457.2L583.9,458.4L582.9,459.1L580.8,460.2L578.9,461.4L576.6,462.4L574.5,462.2L572.4,460.8L571.7,461.1L571,462.5L570,463.6L566.9,465L566.2,465L566,465L563.7,466L559.8,466.6L557.9,466.2L554.4,470.8L553.4,471.7L550.1,473.1L547.3,473.8L545,473.2L544.1,473.2L533.7,473L528.4,471.9L524.9,470.1L522.5,468.2L521.4,465.8L518.8,464.5L514.6,464L511.2,461.8L508.9,457.8L505.7,454.6L501.7,452.3L498.5,449L496.1,444.7L491.9,440.9L485.7,437.4L483.8,436.7L483.5,435.6L480.5,431.3L479.3,429.8L479.4,427.7L478.8,426.5L477.6,425.6L477,422.5L476.8,420.3L475.9,418.8L469.3,418.4L474.8,413L477.5,411.4L480.7,411.7L481.7,411.2L482,410.4L482.5,408.6L482.9,406.9L483.1,405.4L482.7,404.5L481.2,404.2L480.5,400.3L481.2,398.8L482,397.7L481.1,392.9L481.4,391.3L483.8,391.1L485.8,390L487.6,388.9L488.1,387.4L489.4,384.4L488.2,380.6L481,378.2L480.6,377.3L482.2,376.2L484.1,374.7L485.1,373.5L486.4,373.4L488.4,374L491.9,376.6L493.1,377.1L494.5,376.3L495.9,376.1L499.6,376.2L502.8,375.6L502.1,372.7L502.1,370.6L501.6,368.9L501.9,367.1L503.2,365.7L503.6,362.5L505.7,360.3L506.5,360L510.1,360.3L510.9,360.9L511.5,361.1L517.1,366.3L522.4,370.3L526.7,372.4L533.2,372.6L540,372.7L551.4,372L560,371.5L560.5,370.5L561.8,368.1L560.7,366.1L560.8,363.7L562.2,360.5L566.4,357.9L578.6,356.9L585.5,354.9L586.5,352.2L588.9,349.6L591,349.1L593.8,350.3L597.3,352.6L600.4,353.8L602.1,353L608.3,349.2L615.4,345.3L620.2,334.9L620.7,333.3L626.1,332.1L633.7,332.3L637.7,333.7L640.6,334.4L645,334.2L651.5,332L653.8,332L655.7,333.6L657.7,334.9L659,336.6L660,339L660.6,339.8L661.5,341.1L663.1,342.7L664.7,343.1L676.5,340.3Z"/><path class="land" d="M617.4,820L618,818.4L618.9,817.5L620.5,819.2L621.7,818.6L622.7,815.9L622.8,813.1L623.2,812.3L624.9,816.3L624.9,816.3L625.3,820L617.4,820ZM627.5,806.4L626.2,806.8L625.1,806.5L623.9,806.7L623,807.5L623.1,804.1L624.3,799.7L625.7,797.2L627.8,796L628.7,798L628.5,805.1ZM630,818.7L628.3,819.1L626.2,815L625.3,812.1L626.2,811.9L627,812.3L628,813.4L628,814.5L628.4,815.6L629.3,817.1ZM606.6,769.9L607.3,772.4L603,770.8L599.9,768.6L597.3,763.1L591.7,756.8L591.7,754.9L593.8,753.5L598.3,752.6L600.1,753.6L601.3,754.6L601.6,755.9L599.1,758.3L598.5,759.4L600.5,761.5L600.5,762.4L601.4,766.7L602.4,768.2L604.9,769.5ZM745.5,820L745.2,819.2L743.8,818.4L743.1,816.7L743,816L737.6,815.6L733.3,815.6L729.6,813.7L728.5,808.9L726.2,807.6L724.6,806.2L723.3,804.3L719.7,800.9L715.8,797.9L712.1,796L708.1,794.7L704.9,796.2L703,795.9L702.7,794.9L706.8,792.8L712.2,789L716.1,787.7L717.9,787.6L721.5,791L721.5,791L723.4,795.7L725.2,797.4L729.1,799.3L730.9,799.6L737.4,803L745.1,803.6L746.1,804.6L746.9,807.3L748.6,809.4L748.9,811.1L748.1,812.8L749.2,818.3L749.8,820L745.5,820ZM734,784.1L732.6,785.6L730.1,784.9L727.6,779.9ZM737.8,782.1L736.2,782.7L737.8,779.1L740.6,777.3L739.5,780.2ZM760,795.8L757.5,794.1L758,790.8L758.3,790L760,791L760,795.8ZM760,715.7L759.3,715.2L759.5,713.4L760,712.6L760,715.7ZM760,702L758.1,701.6L754.9,703.2L749.7,708.9L744.5,711.8L739.7,710.7L733.4,710.7L732.8,713.9L734,716.1L737.4,719.9L735.8,722.8L737,725.6L739.3,726.2L742.7,726L748.9,729.7L751.7,733.6L753.4,737.9L749.7,734.8L747.1,731.9L743.6,730.8L738.6,728.3L735.5,727.9L732.3,729.6L731.9,731.6L735.5,735.3L738.8,737.5L740.5,739.3L741.6,743.4L741,744.7L739.7,746.1L735.9,743.5L730.1,734.4L721.9,732.6L720.5,734.5L722.1,739.3L723.3,741.1L730.5,746.4L729.8,747.5L728.8,747.9L720.8,745L718.4,740.4L717.9,734.7L710.6,730.8L703.7,726.5L702.1,722.3L703.5,720.8L704.5,717.8L700.7,718.4L698.3,720.3L694.4,722.1L694.2,725.2L694.9,728L693.6,732.1L692.4,739.1L693.1,742.9L701.6,753.5L704.4,761.2L706.4,764L710.7,767.3L715.2,773.2L717.1,776.3L718.4,781.4L714.7,784.5L712.5,784.7L711.4,783.2L713,779.8L712.7,777.6L706.9,774.4L704.4,775.6L701.7,777.6L703.3,781.6L705,784.2L706,787.7L709.5,787.4L704.8,791.4L700.4,793.5L696.1,793.6L693.3,794L692.4,795L694.6,795.7L696.5,795.8L699.5,798L707.9,800.6L712,803.8L715.9,804.1L719.9,810.1L726.9,811.7L730.7,817.7L736,818.9L738.2,820L697.7,820L697.7,820L692.9,818L687.3,813.9L686.1,816.3L683.7,817.5L680.6,817.7L671.6,815L666,817.1L663,817.5L660.6,817.6L657.8,818.5L654.6,819.1L651.7,815.3L650.6,812.3L649.7,811.7L649.6,814.6L648.7,816.8L644.7,818L642.2,816.3L640.3,811.1L638.1,804.4L634,799L630.6,797.7L630.3,794.7L630.6,792.4L634.6,791.7L640.8,794.2L642.2,793.7L643.5,792.6L643.3,790.1L642.4,787.8L640.7,787.7L639.4,788L635.6,787.5L630.8,788.7L628.4,787.6L627.7,786.1L623.6,782.6L620,777.8L614.3,774.6L610.4,764.9L607.3,760.6L603.9,757.5L604.6,757.5L606,758L608.3,759.7L610.9,760.1L612.4,758.9L613.3,757.9L613.8,756.3L614,754.2L614.4,753.6L616.4,753.9L617,753.4L617,751.6L615.8,749.4L614.5,746.7L614.5,745.4L615.5,744.9L617.1,743.7L617.9,742.2L619.6,741.5L622,741.4L624.7,740.8L626.6,739.2L626.8,737.7L627.9,733.4L628.5,731.3L629.8,729.4L630.4,726.8L631.6,724.4L634.2,723.4L636.6,722.2L638.3,719L639.3,716.4L639.3,714.8L637.8,712L636.7,709.4L637.1,706L641.8,705.8L643.4,705.5L649.5,705.2L652.2,703.4L654.1,703.6L658.2,705.1L659.9,704L665.1,701.4L670.3,694.3L672.5,693.2L677.5,692.8L679.1,692L681,692.2L686.6,693.6L689.8,693.8L693.5,692.8L697.7,691L698.7,684.9L699.7,684L702.3,683.8L704.3,683.8L708,684.3L712.6,684.4L715.4,681.6L720,681.3L722.1,680.9L725.6,681.6L729.1,681.5L733.4,680.3L737.5,678.3L740.7,678.5L742,678.1L742.7,677.7L743.6,675L749.5,674.9L751.7,675.1L755,675.2L758.5,673.8L759.5,673.9L760,675.1L760,702ZM665.4,820L666.7,818.8L671.2,819.1L672.8,820L665.4,820Z"/><path class="land" d="M258.4,0L257.4,1.3L255,3.7L264.4,2.8L265.4,5.1L266.7,7.5L271.8,5.8L284.6,13L292.4,9.5L294.4,9.3L296.1,15.1L294.1,21L287.3,27.2L288.9,31.1L291,31.9L297.5,31.1L307.7,34.8L309.8,33.7L318.1,25L321.3,23.1L332.2,21.7L334.2,18.3L338.5,14.9L341.4,11.2L348.2,4.1L355.1,5.4L359.2,6.7L363.8,7.4L367.9,15L378.2,23.3L387.8,22.6L391.1,30.5L392.6,40.2L395.6,43.2L398,45.2L405.9,47.3L406.1,47.4L406.4,48.7L406.8,53.5L407.5,57.5L411.6,73.2L411.4,77.1L411.3,78.1L409.9,83.5L407.3,88L403.9,90.6L402,93.3L401.6,96.5L406,102L414.9,109.8L418.5,116.3L416.9,121.8L416.3,125.9L417,128.5L418.4,130.6L420.6,132L421.5,134.5L421.1,137.7L421.5,139.9L423.1,141.5L423,142.2L422.2,144.4L421.1,148.5L420.5,151.4L417.9,155.4L418.8,158.9L420.7,162.9L422.2,164.9L422.7,166.8L421.7,171.5L422.2,172.6L428.4,176L429.4,177.5L430,180.7L432.3,187.6L430.4,196.2L428.8,201L425.3,208.4L425.1,209.2L424.7,210L423.6,211.3L422.1,211.5L419.9,210.6L418.4,209.3L418.8,206.1L417.8,205.8L416.5,203.9L416,201.8L414.7,200.9L409.8,199.9L408.2,199.4L407,199.9L406,201.3L406.6,202.7L407.6,204L410.2,206.1L409.9,207L404.1,209L400.5,211.1L397.2,212.3L393.7,214.4L386.9,216.9L381.9,217.6L380.9,218.1L379.1,222.3L377.8,223.1L376.6,222.8L375.7,222L374.5,222.6L373.4,224L372,224.5L371,224.4L369,228.1L363.3,229.2L362.7,231L361.6,233.2L360.8,233.7L358.2,232.8L354.6,232.3L352.7,233.6L350.2,234.2L347.2,234.4L344,236.8L340.6,240.9L338.9,244.5L337.9,245.8L336.3,242.5L334.3,240L333,238.8L331.7,238.8L331.5,239.4L331.5,241.2L332.7,244.1L334.3,246.1L334.6,247.6L335.6,250.3L337.9,253.3L341.6,255.6L344.1,257.9L346,261.2L346,262.1L345.5,263.4L344.6,264.6L343.9,266.3L341.8,269.5L342.4,270.9L344.1,272.7L345.6,274.8L347.5,278.2L350.1,284.3L351.8,286.8L354.2,289.3L356.4,291.3L359.9,291.2L363.6,294.9L367.7,300.2L370.6,302.7L372.8,303.4L374.5,305.4L376,308.2L376.6,309.8L378,310.9L381.7,310.7L386.4,315.1L389.2,318.3L390.9,320.8L390.5,321.8L390.2,325L390.2,328.4L389.9,330.1L387.8,332.5L386.6,333L386,333.5L379.6,330.4L379.1,331L378.6,331.3L376.8,340.3L375.7,341.9L373.9,343.5L370.1,345L367.7,345.6L365.6,346.4L359.2,350L356.4,352.3L354.5,355.1L354.5,356.7L357.6,361.3L361.2,366.2L361.2,370.4L359.6,373.6L359.2,374.9L360.4,375.3L362.3,375.5L363.9,376L364.7,378.2L364.4,382.1L363.8,385.8L363.3,387.3L361.7,387.5L358.6,385.9L356.3,384L355.3,382.9L355.3,381.6L355.8,380.7L354.9,379L351.9,377.5L348.8,378.2L346.5,379.2L345,379.2L343.4,377.7L340.9,376.6L337.5,375.8L335.6,375L335.1,375.5L335.3,378.7L334.7,380.1L318.6,382L313.6,383.7L310.1,385.9L307.4,386.8L306.8,388.3L304.2,390L301.2,390.6L300.5,390L298.6,390.8L295.4,391.6L293.3,391.3L292.3,389.9L290.3,387.7L289.4,386.1L289.6,385.2L285,385L282.1,383.7L276,384.1L274.6,383.6L274.3,384.1L273.3,390.4L272.2,393L270.2,395.7L267.7,397.2L265.8,397.4L265.9,395.5L266.4,393.1L264.9,392.6L262.8,392.3L261.8,391.6L262,389.8L261.5,388.8L260.7,387.5L258.4,386L254,383.6L250.9,382.3L249.6,383.6L247.4,384.9L243.9,384.5L243.1,385L243.1,385L237.1,381.2L231.3,377.4L229.4,377.4L220.9,378.2L220.6,377.9L219.3,375.8L217.9,375.1L217.1,375.5L216.5,376.1L215.7,375.9L211.8,372.6L210.3,372.1L208.1,372.6L205.6,374.3L204.5,376.6L204.8,377.9L206.1,378.4L209.6,378.1L210.1,378.4L210.2,379.1L209.8,379.8L207,380.5L206.2,381.3L205.4,381.5L204.9,381.6L201.9,380.7L197.4,380.7L193.8,382.3L188,382.9L180.2,382.6L177.3,381.4L175.6,380.7L174.4,377.4L174.7,372.2L176.6,365.4L177.1,360.4L176.2,357.3L177.3,352.5L180.4,346.1L182.4,339.4L183.5,332.3L185,327.6L187.9,324.4L194.8,315.3L195.5,314.6L195.2,310L193.3,309.4L190.6,308L183.7,306.4L177.2,305.4L174.3,304.1L171.6,300.6L170,300.5L166.9,301.8L163,302.6L160.2,301.9L158.4,302.1L157.4,302.7L156.9,302.2L156.1,299.1L154.7,298.3L152.4,297.7L150.9,298L149.9,299.4L148.5,300.5L147,300.1L142.6,293.3L141.5,291.7L141.1,290.3L140.2,287.8L137.4,285.3L134.8,284.5L133.6,284.7L133.7,281.5L134.7,276.9L135.7,274.5L137.1,272.6L138.4,271.2L138.7,268.7L138.5,266.4L136.9,266L132.8,264.2L130.5,262.4L128.7,260.1L126.5,256.9L125.5,253.7L125.4,250.5L125.8,249.1L125.9,248.1L127.8,243.1L134.2,238.5L133.6,234L133.5,231.2L131.8,229.4L128.7,228.7L127.9,227.5L127.5,226.1L129.9,223.4L127,221.2L125.8,218.9L121.9,216.1L121.4,215L123.4,206.6L121.9,204.1L120.2,202.9L118.1,202.3L117.1,201.1L116.8,199.8L117.2,198.9L119.6,199.2L120.3,198.3L126.1,193.4L126.4,192.4L125.6,191.9L124.5,191.6L124.3,190.5L124.3,189.1L127.4,181.9L128.4,178.9L128.5,176.6L128.4,174.5L126.5,171.2L124.8,168.5L124.8,166.3L123.5,165.1L119.9,159.3L119.9,157.1L121.9,155.4L124.8,154.3L125.8,153.3L127.4,152.7L132,154.4L134,155.9L134.6,155.5L136.3,154L139.5,154.3L147.2,151.1L148.3,149.5L149.2,147.9L149.3,147.2L146.4,144.1L146.2,142.9L146.6,141.6L147.5,140.6L149.2,139.8L151.2,138.5L155.4,134.6L156.8,131.1L157.3,127.5L157.4,124.7L156.1,122.5L155,121.2L153.4,121.4L150.3,121.3L147.5,120L145.9,118L145.5,116.3L146.2,115.2L146.5,113.8L146,112.4L146.2,111.3L147.5,110.3L156.6,110.4L157.3,109.4L157.9,104L160.1,96L162.3,91.5L162.7,89.6L162.6,78.8L163,73.3L161.4,70.7L158,67.9L158.8,62L159.9,57.5L163.2,51.7L165.9,50.2L177.8,49.3L190.9,49.7L196.3,58.2L194.3,62.6L197.4,64.6L199,63.9L200.2,60.1L200.9,55.9L202,54.6L206.1,57.8L207.6,59.9L207.6,66.8L209.1,57.5L208,50.8L208.7,44.5L210.5,41L211.9,38.9L221.5,41.2L232.2,40L236.1,42.5L245.2,55L248.1,57L252,57.6L246.8,55L235.7,39.9L232.5,38L227.4,37.5L224.2,35.9L222.2,33.6L221.7,31.6L221.9,16.3L219.9,14L217.4,13.2L215.9,14.2L212.8,14.3L212.2,10.8L212.9,8.2L219.3,6.4L223.3,4.1L223.6,0L258.4,0ZM385.9,0L385.9,0L383.5,2.8L382.8,4.3L383.5,6.6L387.3,9.1L387.3,9.1L388.1,13.1L387.1,15L383.3,11.8L379.3,11.8L377.1,17L375.4,17.2L369.3,12.5L368.4,10.1L368.2,8.3L369,1.6L368.9,0L385.9,0ZM404.5,34.5L404,36.3L404.6,39.2L403.1,39L398.9,39.6L394.7,38.7L393.8,35.2L394.6,31.8L392.8,29.5L391.2,28.1L391,26.2L391.2,24.1L398.5,29.6ZM303.7,7L298.4,7.1L296.4,4.8L294.3,4.2L295.4,1.2L296.9,0.1L302,2.1L303.6,5.8Z"/><path class="land" d="M241.6,615.7L240.7,622.5L241.3,624.5L242.6,626L243.2,627.5L244.2,645.7L243.9,647.2L239.7,654.5L238.8,656.6L238.6,665.7L237.9,668.1L236.4,670.5L233.8,678.1L231.4,681.6L225.1,677.3L221.4,675.6L219.6,673.6L218.4,672.2L219.1,670.4L220.9,668.6L221.1,667L217.1,665.4L215.3,664.2L215.3,662.3L216.7,659.3L216,656.7L213.8,656.8L211.9,656.4L211.8,655.1L213.1,653.4L214.8,651.2L214.7,648.8L212.7,647.8L210.8,645.7L210.1,643.1L211.6,641.2L213.8,640L212.2,637.3L211,637.2L210.1,636.6L210.8,635.3L212.6,633.4L215.2,627.6L218.6,624.9L224.8,623.1L226.6,622.4L228.1,620.4L229.8,619.1L231.8,619.2L233.8,620L234.9,620.9L235.9,620L236.6,617.5L236.1,615.3L236.4,609.1L237.5,605.7L239.3,605.5L241,607.4L240.8,609L241.5,613ZM0,197.3L2,196.1L2.4,198.7L3.8,202L4.6,203.8L3.9,206.2L4.5,208.2L7,211.7L10.1,215L12.8,217.2L13.7,216.9L15.7,216.3L19.1,214.2L22.1,213.5L23.7,215.1L24.6,216.1L26.5,219.8L27,223.7L27.8,226.9L29.3,228.2L34.8,228.7L38.9,229.9L40,230.9L41.3,238.1L42.1,239.1L43.2,238.3L44.2,237.1L45.6,236.9L47.9,237.4L51.1,237.5L54.4,238.3L58.8,242.4L58.7,243.7L57.8,246L57.5,247.9L58.2,248.6L59.4,250.5L59.2,252.7L58,254.3L57.6,255.6L57.6,256.4L58,257.1L58.9,257.7L65.5,258.5L71.6,257.7L75.4,255.4L76.1,253.1L77.2,250.4L79.4,248.1L81,247.3L82.5,248.3L80,257.7L81.8,260.2L82,263.8L82.7,266.9L84.9,266.8L87.5,267.4L89.3,268.6L91.6,270.4L94.7,272.2L96.9,272.8L97.6,274.2L99.5,275.9L102.2,279.3L104.7,281.6L105.9,281.6L108.3,280.7L111.8,280.1L114.5,280.2L115.6,282L118.3,282.7L119.2,283.5L120.3,284.7L122.1,285.1L124.3,284.7L125.8,283L127.9,282.3L130,282.5L131.2,283.5L133.6,284.7L134.8,284.5L137.4,285.3L140.2,287.8L141.1,290.3L141.5,291.7L142.6,293.3L147,300.1L148.5,300.5L149.9,299.4L150.9,298L152.4,297.7L154.7,298.3L156.1,299.1L156.9,302.2L157.4,302.7L158.4,302.1L160.2,301.9L163,302.6L166.9,301.8L170,300.5L171.6,300.6L174.3,304.1L177.2,305.4L183.7,306.4L190.6,308L193.3,309.4L195.2,310L195.5,314.6L194.8,315.3L187.9,324.4L185,327.6L183.5,332.3L182.4,339.4L180.4,346.1L177.3,352.5L176.2,357.3L177.1,360.4L176.6,365.4L174.7,372.2L174.4,377.4L175.6,380.7L177.3,381.4L177.3,381.4L173.1,383.7L172.3,385.8L170.7,388.4L167.9,389.6L165.3,389.9L163.1,389.6L161.9,388.5L162,387.5L160.9,386.8L158,386.8L155,388.6L152.7,391.6L153.4,393.3L155.7,393.7L156.1,394.4L156.1,395.2L155.4,396.3L154.5,398.1L149.9,403.3L145.4,408.6L144.6,410.2L143.3,411.3L137.4,414.1L136.8,415.3L136.4,420L135.8,423.9L131.5,427.5L127.3,431.2L126.1,433.3L125.4,435.9L124,438.8L123.8,440.3L125.9,442.8L125.6,444.8L125,447.7L122.9,449.8L120.7,450.9L120.7,454.1L121.9,454.6L124.7,454.3L128.6,452L131.1,449L129.6,446.3L129.4,445.7L129.7,445L132.8,442L136.4,440.2L141.6,439.8L147.8,440.9L148.5,441.3L148.1,443.2L148.7,446L149.8,447.9L148.3,453.4L149.5,455.1L151.2,457.1L152.6,459L154.5,460.8L156.3,463.6L156.9,465.2L154,468.2L149.5,470.8L148.8,472.4L149,474.4L149.5,476L152.1,477.9L154.8,482.3L156.6,486.2L160.5,490L161.5,491.2L161.2,492.1L160.1,493.7L158.9,499.1L157.3,499.9L155.5,500.3L150.7,504.2L148.6,503.6L145.5,503.7L143.4,505L143.5,507.4L145.5,509.7L146.6,512L147.1,514.6L149.3,516.4L152.3,517.5L154,517.6L155.2,518.3L155.9,519.1L157.1,524.5L156.4,525.8L154.8,526.4L153.8,528.6L151.8,531.9L150.7,534.5L151.9,536.8L152.4,538.4L151.8,540.2L152.7,542.9L155,545.5L161.2,549.4L167.1,552.4L168.9,552.9L176.7,551L178.1,551.1L179.1,553.5L179.5,555L178.6,557.4L176.5,560.7L174.1,563.3L172.8,565.5L173,567.5L173.1,570.2L171.3,571L171.2,570.4L170.4,570L169.8,570.2L169.3,570.8L169.2,571.8L165.2,573.5L162.3,575.3L151.4,585.8L146.4,588.9L145.4,590.7L144.4,594.1L141.4,597.1L138.7,598.5L132.2,600L125.6,603.1L122.8,601.8L115.1,601.9L110.4,598.1L101.2,595.7L98.2,590.2L94.2,589.9L91.4,590L89.8,589.2L89.3,587.3L89.3,585.5L86.5,586.3L84.2,586.3L82.9,587.1L81.9,587.9L80.6,587.3L79.9,587.6L80,588.6L77.3,588.9L74.4,588.2L66.9,585.3L65.8,584.9L60.6,583.9L58.4,582.7L56.7,579.8L55.3,579L54.6,578.4L49.8,579.8L48,582.1L45.4,584.7L27.3,597.4L24,602.7L20.1,610.5L19.9,614.1L21.5,625.7L25.2,631.7L25.7,633.2L23.6,633.2L20.1,632.4L17.3,631.5L14.7,632L12.1,633.3L9.7,634L8.1,634.3L7,634.9L6.5,636.4L6.4,637.4L3.5,637.2L0,636.1L0,197.3Z"/><path class="land" d="M563.7,281.6L562.8,281.7L560.8,282.5L558.2,282.8L555.5,282.7L553.4,284.1L551.4,286.4L549.3,288L548.2,289.4L547.6,290.9L540.5,295L539.5,296.8L538.8,299.1L538.4,302.3L537.9,305.2L536.8,306.7L532.9,308L531.9,308.6L531.3,310.1L529.1,312.4L526.6,314.5L522,316.9L517.2,317.6L510.7,316.8L507,315.9L505.2,316.9L502.7,320.1L500.1,325.5L499,329.6L498.1,328.4L496.5,324.1L494.8,323.5L492.4,323.2L490.7,322.5L486.8,320L484.8,319.3L482.6,319.1L480.4,320.5L478.8,322.3L473.7,322.3L468.1,321.5L460,315.7L458.1,315.6L455.8,315.9L452.4,314.6L445.5,310.8L442.3,310L440.3,310.5L438.6,311.3L437.2,311.5L436.5,310.2L434,308.7L431.4,308.5L430.7,309.5L429.9,317.6L429,320.5L425.6,320.5L424.3,321.8L421.6,325.8L421,329.5L416.3,328.8L414,328.2L412.1,328.7L409.8,330.8L403.7,330.6L398.9,329.4L396.8,324.7L394.6,322.8L391.8,321.2L390.9,320.8L389.2,318.3L386.4,315.1L381.7,310.7L378,310.9L376.6,309.8L376,308.2L374.5,305.4L372.8,303.4L370.6,302.7L367.7,300.2L363.6,294.9L359.9,291.2L356.4,291.3L354.2,289.3L351.8,286.8L350.1,284.3L347.5,278.2L345.6,274.8L344.1,272.7L342.4,270.9L341.8,269.5L343.9,266.3L344.6,264.6L345.5,263.4L346,262.1L346,261.2L344.1,257.9L341.6,255.6L337.9,253.3L335.6,250.3L334.6,247.6L334.3,246.1L332.7,244.1L331.5,241.2L331.5,239.4L331.7,238.8L333,238.8L334.3,240L336.3,242.5L337.9,245.8L338.9,244.5L340.6,240.9L344,236.8L347.2,234.4L350.2,234.2L352.7,233.6L354.6,232.3L358.2,232.8L360.8,233.7L361.6,233.2L362.7,231L363.3,229.2L369,228.1L371,224.4L372,224.5L373.4,224L374.5,222.6L375.7,222L376.6,222.8L377.8,223.1L379.1,222.3L380.9,218.1L381.9,217.6L386.9,216.9L393.7,214.4L397.2,212.3L400.5,211.1L404.1,209L409.9,207L410.2,206.1L407.6,204L406.6,202.7L406,201.3L407,199.9L408.2,199.4L409.8,199.9L414.7,200.9L416,201.8L416.5,203.9L417.8,205.8L418.8,206.1L418.4,209.3L419.9,210.6L422.1,211.5L423.6,211.3L424.7,210L425.1,209.2L428,209L431,207.6L431.3,205.4L431.1,201.3L431.4,200.6L436,201.8L440.6,203.7L441.2,207.8L442.4,209.8L443.9,211.7L445.3,212.6L447.6,212.7L453.8,215.1L456.8,215.6L459.9,217.3L462.4,219.1L464.4,219.4L465.2,221.3L466.4,222.6L468.3,221.6L475.8,220.2L478.5,222.1L480.2,224.1L480.5,224.6L479.6,226.4L479.1,227.7L478.4,228.6L475.8,229.5L474.4,231.1L473.3,232.7L474,234.4L476.2,235.5L477.6,235.8L478.1,237L482.9,242.2L486.7,249L488.1,250.1L489.5,250.3L491,249.4L492.9,247.1L495.1,245.5L497,244.7L500.2,242.8L500.3,241.6L497.6,237L496,233.3L496.4,232.6L499.8,233.2L505.8,235.3L514.8,241.9L516.5,241.9L519.7,241.3L523.1,240.3L524.8,239.1L525.4,239.6L525.9,243.2L525,245.2L520.8,247.1L521,248.1L522.2,249.4L524,250.2L526.2,252.5L527.9,255.2L529.2,256.4L530.7,257.1L534.4,255.6L535.5,254.5L535.9,253.7L536.7,253.8L538,255.1L538.4,256L542,257.5L544.1,259.3L545.5,260.2L547,259.3L552.8,260.8L554.4,262L554.9,264.1L554.5,265.3L555.5,268.5L562.8,276.2L563.6,280Z"/><path class="land" d="M382.7,485.4L383.9,487.4L393.1,489.8L394.9,488.8L396.2,487.1L396.2,486.1L396.9,485.8L400.2,487.4L402.8,487L407,486.9L409.9,487.1L411.9,486L414.7,481.6L415.7,479.1L416.8,478.5L417.6,478.9L418.1,480.8L419.6,482.8L422.5,485.9L424.6,487.3L426.4,487.9L428.2,486.6L430.2,486.3L435.5,488.7L440,489.1L443.3,487.9L442.9,486.1L441.7,484.2L441.4,482.4L441.7,480.7L443.9,479.1L443.8,478.4L441.1,475.5L441.2,474.8L447.3,471.6L453.2,469.8L454.1,468.4L454.7,466.3L455,462.4L454.6,459.2L452.2,456.2L452.1,454.6L452.6,453.1L453.6,451.6L455.9,451L458.7,450L460.9,448.8L463.8,447.8L466.1,446.4L468.3,443.1L469.7,442.6L473.9,443.1L474.8,442.3L474.3,437.5L475,436.3L476.5,435.6L477.1,435L480.9,435.5L483.8,436.7L485.7,437.4L491.9,440.9L496.1,444.7L498.5,449L501.7,452.3L505.7,454.6L508.9,457.8L511.2,461.8L514.6,464L518.8,464.5L521.4,465.8L522.5,468.2L524.9,470.1L528.4,471.9L533.7,473L544.1,473.2L545,473.2L547.3,473.8L550.1,473.1L553.4,471.7L554.4,470.8L557.9,466.2L559.8,466.6L563.7,466L566,465L566.2,465L566,466.2L565.8,468.2L563.9,469.7L565.8,473.1L567.7,478.6L566.5,481.3L567.8,483.4L571.4,484.9L571.6,485.5L570.5,486.1L569.6,487.9L569.6,491.2L572.6,494.3L578.8,497.2L580.8,497.6L581.5,498.7L582.5,499.5L583.2,500.3L583.3,501.5L582.8,502.3L579.8,502.5L576.5,502.5L574.1,501.2L574,502.2L573.9,503.3L571.6,504.1L572.9,512L572.4,514.3L571.5,515.1L570.8,514.7L569.8,514.6L569.3,515.4L569.6,517.1L567.4,517.3L563.8,516.4L562.1,514.9L561.8,513.3L561.8,511.9L560.7,509.4L557.9,506.9L551.8,506.5L549.6,505.8L547.3,504.8L544.8,504.2L542.5,504.2L539.8,504.9L534.8,503.8L533.2,505.3L530.7,506.9L528.5,506.9L524.3,503L523,502.8L519.3,504.7L517.8,504.8L516.7,504.2L511.7,502.7L509.5,502.5L507.8,503.1L504.9,502.4L497.7,497.2L493.4,501.1L484.3,500.2L481.7,502.8L478.6,507.9L476.2,510.3L474,509.4L471.6,507.2L467.1,501.5L464.9,500.4L462.3,500.2L460,500.8L458.8,502L457.9,510.3L457.1,517.7L457.1,522.1L462,526.2L467.8,533.2L469.7,534L470.6,536.3L471.9,542.1L473.4,548.7L476.4,553L479.1,556.1L482.4,558.9L486.4,563.2L489.8,567.8L490.7,569.6L497.1,575.8L503.4,582.1L509.1,584.3L510,585.4L510,590.3L510.6,592.1L514.3,597.1L522,604.5L522.9,606.2L523.1,607.4L522.7,608.4L520.7,609.4L519.1,608.3L511.9,601.1L505,596.5L497.2,588L486.8,584.6L479.6,580.8L475.4,581.4L470.6,582.5L467.7,582.6L465.6,581.9L464.1,579.6L464.4,577.8L464.1,575.4L459.9,571.6L454.2,568L448.9,563.4L438.1,550.8L435.9,546.7L438,546L439.6,546L441.4,545.1L444.4,545.1L447.9,546L444.8,543.3L440.9,540.6L431,530L428,525L427.7,519.5L428.4,512.1L426.7,506.8L419,499.8L416.1,496.2L410.6,494L408,494.2L406.5,496.9L405.4,503L400.4,510.8L398.7,514.3L396.1,518.7L393.8,519L392.5,518.6L388.4,511.2L384.4,505.4L383.9,502.8L383.5,499.4L380.6,487.1ZM488.6,606.7L494.9,608L499.6,607.3L503.8,608.2L506.4,609.7L507,610.4L503.6,610.5L499.7,609.9L495.4,611.4L491.5,610.6L490,609.6L489.1,608.4ZM507.3,600.5L504.8,601L489.5,600.7L485.1,599.7L480.1,597.2L479,596.4L484.1,595.7L488.7,596.4L490.2,598.2L502.7,599.7ZM493.1,593.7L487.7,593.8L483,593L480.6,591.5L480.9,590.3L481.6,588.2L486.8,588.5L494.9,590L496.7,591.7L496.2,592.4ZM439.6,556L440.2,557.7L435.9,554.5L434.2,552.4L433.9,551.5ZM425.1,511.9L420.9,512.9L418.9,511L418.4,509.5L414.8,509L412.7,506.9L412.3,505.9L415.3,503.6L416.9,499.7L418.9,502L421.4,506.4L422.7,507.5ZM425.8,522.5L426.7,524.6L423.5,522.7L420.6,521.9L420,520.5L420.4,519.3L421,518.1L423.2,518.3L423.6,519.4ZM438.1,542.9L437.2,544.2L435,541.8L433,540.1L431.5,538.2L428.7,535.7L427.7,532.8L423.5,527L422.7,525.4L424.9,527.8L426.7,529.3L428.2,529.6L431.9,533.3L435.6,538.1L440,542.2L439,542.4ZM438.2,562.8L438.7,563.4L438.6,563.9L436.9,563.3L436.4,563.4L427.9,553L427.1,551L430,553.4ZM444.4,560.3L446.8,563.9L444.5,563.1L442.3,560.9L440.9,558.5ZM414,527.3L413.8,529.1L411.7,526.8L410.6,522.5L408,515.6L407.6,513.6L409,511.7L409,509.7L407.1,503.6L408.6,502.7L409.6,502.5L409.9,506.8L410.8,509.2L413.3,512.2L412.8,517.1L413.3,524.1L413.8,525.6ZM521.5,617.4L526.1,620.5L512.4,616.4L514,616L515.5,615.9ZM550.1,627.1L550.1,628.9L551.4,630.9L552.8,633L546.5,628.7L540.5,623.7L529,616.1L520.7,614.2L509.4,608L502.1,605.8L504.9,605.3L508.1,605.3L525.5,613.5L523.5,611.3L526,610.5L528.1,611.1L529.5,613.8L532.2,615.6L536.5,618.7L539.3,621L545.5,625.3L547,625.9Z"/><path class="land" d="M760,675.1L759.5,673.9L758.5,673.8L755,675.2L751.7,675.1L749.5,674.9L743.6,675L742.7,677.7L742,678.1L740.7,678.5L737.5,678.3L733.4,680.3L729.1,681.5L725.6,681.6L722.1,680.9L720,681.3L715.4,681.6L712.6,684.4L708,684.3L704.3,683.8L704.8,682.9L705.5,671.4L707.4,666.3L707.3,665.3L706.9,664.5L705.3,663.6L704,660.9L701.6,653.5L700.2,652L696.2,650.5L692.8,648.3L689.9,645.6L684.6,638.6L687.3,637.9L688,636.5L690.8,632.7L691,630.9L690.8,629.8L689,627.9L687.8,623.9L688.7,620.1L688.8,618.2L687.9,616.3L688.8,613.9L690.8,612.6L692,612.2L697.1,612L700.3,607.2L702.3,605.6L704.3,602.9L705.2,601.9L706,599.8L706.4,597.7L702.3,594.6L700.9,592.3L699.2,589.8L696.7,588.1L691.9,585L689.9,582L689,578L687.8,575L686.3,573.1L686.1,571.4L685.4,569.5L685.3,565.6L686.4,560.5L687.2,558.7L688.9,558.1L693.4,555.4L693.5,551.9L694.4,549.7L695.7,548.5L697,547.6L699.5,549.6L705.3,552.9L708.1,555.3L708,556.8L706.6,558.2L704.2,559.6L702.7,561.5L702.2,563.9L702.7,565.5L704.4,566.9L715,565L725.6,566L739.9,569.2L749.4,570.3L756.5,568.8L760,569.5L760,675.1Z"/><path class="land" d="M576.1,581.3L575.1,581.1L573.4,581.6L572.1,582.1L570.4,581.3L568.5,580.8L567.8,581.6L567.4,583L568.5,585.6L570.6,589.6L570.4,592.7L568.6,593L567.2,590.4L565.8,590L564.3,590.1L560.8,593.1L558.2,595.6L557.6,597.3L556.6,599.2L556.4,600.6L556.5,605.2L551.8,605.9L550.8,606.6L550.3,608L550.7,613.9L551,617L553.6,621.8L553.8,623.3L553.4,624.4L551.5,626.2L550.7,627L550.1,627.1L547,625.9L545.5,625.3L539.3,621L536.5,618.7L532.2,615.6L529.5,613.8L528.1,611.1L526,610.5L523.5,611.3L520.7,609.4L522.7,608.4L523.1,607.4L522.9,606.2L522,604.5L514.3,597.1L510.6,592.1L510,590.3L510,585.4L509.1,584.3L503.4,582.1L497.1,575.8L490.7,569.6L489.8,567.8L486.4,563.2L482.4,558.9L479.1,556.1L476.4,553L473.4,548.7L471.9,542.1L470.6,536.3L469.7,534L467.8,533.2L462,526.2L457.1,522.1L457.1,517.7L457.9,510.3L458.8,502L460,500.8L462.3,500.2L464.9,500.4L467.1,501.5L471.6,507.2L474,509.4L476.2,510.3L478.6,507.9L481.7,502.8L484.3,500.2L493.4,501.1L497.7,497.2L504.9,502.4L507.8,503.1L509.5,502.5L511.7,502.7L516.7,504.2L517.8,504.8L519.3,504.7L523,502.8L524.3,503L528.5,506.9L530.7,506.9L533.2,505.3L534.8,503.8L539.8,504.9L542.5,504.2L544.8,504.2L547.3,504.8L549.6,505.8L551.8,506.5L557.9,506.9L560.7,509.4L561.8,511.9L561.8,513.3L562.1,514.9L563.8,516.4L567.4,517.3L569.6,517.1L570.9,517L574,515.7L577.6,514.9L580.2,515.7L581.4,516.5L581.7,517.6L580.9,521.4L579.4,525.4L577.1,529.7L574.6,533.7L574,535.8L573.9,539.1L573.5,541.7L573.9,543.2L574.6,544.5L577.5,545.5L581,548.2L584.3,551.6L588.2,555.5L589.5,557L589.5,558.5L588.4,559.6L584.9,560L581.3,559.7L579.9,559.4L578.7,559.8L577.8,560.7L578.3,561.7L581.9,566.4L586.3,573.2L586.5,576.1L586,578.3L585,579.9L583.2,579.7L581.8,578.4L579.8,578.5L578.2,578.8Z"/><path class="land" d="M60.6,180.2L63.3,181.5L65.6,181.8L66.8,181.2L66,177.9L68,176.2L70.1,175.3L71.1,176.7L73.1,178.2L74.7,178.3L78.9,174.4L79.8,175.2L80.8,176.5L80.9,177.6L81.1,178.8L82,179.2L85.4,179L87,176.9L88.3,175.6L89.3,176.5L89.8,179L90.7,182.4L94.7,186.1L98,187.2L102.1,186.4L103.7,185.7L104.8,186.3L105.8,188.3L108.2,190.5L113.1,192.1L114.7,193L115.7,194.5L115.5,196.7L113.1,202L112.8,203.7L113.1,204.1L112.6,205.2L109.5,208.7L109.3,210L110.3,212L111.1,213.7L113,214.5L114.7,214.8L118,214.9L121.4,215L121.9,216.1L125.8,218.9L127,221.2L129.9,223.4L127.5,226.1L127.9,227.5L128.7,228.7L131.8,229.4L133.5,231.2L133.6,234L134.2,238.5L127.8,243.1L125.9,248.1L125.8,249.1L125.5,248.9L124.8,247.3L123.5,247.3L120.9,246.6L117.1,251.1L115.4,254.9L114.4,257.7L112.9,259.9L112.6,262.2L112.8,263.2L112.3,264.5L112.3,265.8L114.4,268.4L115,269.9L117.6,274.5L116.7,276.3L116.1,278L115.4,279.4L114.5,280.2L111.8,280.1L108.3,280.7L105.9,281.6L104.7,281.6L102.2,279.3L99.5,275.9L97.6,274.2L96.9,272.8L94.7,272.2L91.6,270.4L89.3,268.6L87.5,267.4L84.9,266.8L82.7,266.9L82,263.8L81.8,260.2L80,257.7L82.5,248.3L81,247.3L79.4,248.1L77.2,250.4L76.1,253.1L75.4,255.4L71.6,257.7L65.5,258.5L58.9,257.7L58,257.1L57.6,256.4L57.6,255.6L58,254.3L59.2,252.7L59.4,250.5L58.2,248.6L57.5,247.9L57.8,246L58.7,243.7L58.8,242.4L54.4,238.3L51.1,237.5L47.9,237.4L45.6,236.9L44.2,237.1L43.2,238.3L42.1,239.1L41.3,238.1L40,230.9L38.9,229.9L34.8,228.7L29.3,228.2L27.8,226.9L27,223.7L26.5,219.8L24.6,216.1L23.7,215.1L22.1,213.5L19.1,214.2L15.7,216.3L13.7,216.9L12.8,217.2L10.1,215L7,211.7L4.5,208.2L3.9,206.2L4.6,203.8L3.8,202L2.4,198.7L2,196.1L17,186.9L26.1,182.1L30.4,180.7L31.4,185.5L32.3,187L33.3,187.9L34.6,188.1L36.1,187L38.4,185.7L41.8,186.3L44.4,187.5L45.3,188.6L47,189.8L49.4,190L54.2,187.8L58.8,184.6L60.1,182.3Z"/><path class="land" d="M760,152.5L758.7,152.6L754.1,153.5L752.8,155.2L751.3,158.6L745.9,164.8L740.9,168.9L740,169.2L736.9,167L734.4,166.4L731.6,166.1L729.5,166.7L728.1,167.8L728.3,172.5L728,172.9L725.7,167.3L726,162.2L727.2,159.3L728.7,156.7L728.1,152.8L729.6,147.6L729.7,143.8L729,142.2L727.7,140.3L724.5,138.3L723,136.6L718.4,134.4L714,131.7L713.2,130L713.5,128.9L714.2,127.1L717.7,122L721.3,117L723.8,115.1L736.3,108.7L738.3,106.4L738.8,102.7L738.8,99.9L738.5,94.9L737.8,88L736.8,83.1L734.4,73.9L727.8,55L723.9,35.1L726.5,36.3L732.4,36.8L737.3,35.3L739.7,35.2L741.9,35.6L745.2,34.8L748.2,34.5L749.8,36.3L752.5,37.9L758.1,35.6L760,34.5L760,152.5Z"/><path class="land" d="M243.2,397.9L246,391.7L246.5,387.9L244.1,385.6L243.1,385L243.9,384.5L247.4,384.9L249.6,383.6L250.9,382.3L254,383.6L258.4,386L260.7,387.5L261.5,388.8L262,389.8L261.8,391.6L262.8,392.3L264.9,392.6L266.4,393.1L265.9,395.5L265.8,397.4L267.7,397.2L270.2,395.7L272.2,393L273.3,390.4L274.3,384.1L274.6,383.6L276,384.1L282.1,383.7L285,385L289.6,385.2L289.4,386.1L290.3,387.7L292.3,389.9L293.3,391.3L295.4,391.6L298.6,390.8L300.5,390L301.2,390.6L304.2,390L306.8,388.3L307.4,386.8L310.1,385.9L313.6,383.7L318.6,382L334.7,380.1L335.3,378.7L335.1,375.5L335.6,375L337.5,375.8L340.9,376.6L343.4,377.7L345,379.2L346.5,379.2L348.8,378.2L351.9,377.5L354.9,379L355.8,380.7L355.3,381.6L355.3,382.9L356.3,384L358.6,385.9L361.7,387.5L363.3,387.3L363.8,385.8L364.4,382.1L364.7,378.2L363.9,376L362.3,375.5L360.4,375.3L359.2,374.9L359.6,373.6L361.2,370.4L361.2,366.2L357.6,361.3L354.5,356.7L354.5,355.1L356.4,352.3L359.2,350L365.6,346.4L367.7,345.6L370.1,345L373.9,343.5L375.7,341.9L376.8,340.3L378.6,331.3L379.1,331L379.6,330.4L386,333.5L386.6,333L387.8,332.5L389.9,330.1L390.2,328.4L390.2,325L390.5,321.8L390.9,320.8L391.8,321.2L394.6,322.8L396.8,324.7L398.9,329.4L403.7,330.6L409.8,330.8L412.1,328.7L414,328.2L416.3,328.8L421,329.5L421.6,325.8L424.3,321.8L425.6,320.5L429,320.5L429.9,317.6L430.7,309.5L431.4,308.5L434,308.7L436.5,310.2L437.2,311.5L438.6,311.3L440.3,310.5L442.3,310L445.5,310.8L452.4,314.6L455.8,315.9L458.1,315.6L460,315.7L468.1,321.5L473.7,322.3L478.8,322.3L480.4,320.5L482.6,319.1L484.8,319.3L486.8,320L490.7,322.5L492.4,323.2L494.8,323.5L496.5,324.1L498.1,328.4L499,329.6L498.7,330.1L498.6,332L497.2,334.6L495.9,337.7L495.9,340.6L499.6,350.4L502.9,356.3L503.6,358.6L505.7,360.3L503.6,362.5L503.2,365.7L501.9,367.1L501.6,368.9L502.1,370.6L502.1,372.7L502.8,375.6L499.6,376.2L495.9,376.1L494.5,376.3L493.1,377.1L491.9,376.6L488.4,374L486.4,373.4L485.1,373.5L484.1,374.7L482.2,376.2L480.6,377.3L481,378.2L488.2,380.6L489.4,384.4L488.1,387.4L487.6,388.9L485.8,390L483.8,391.1L481.4,391.3L481.1,392.9L482,397.7L481.2,398.8L480.5,400.3L481.2,404.2L482.7,404.5L483.1,405.4L482.9,406.9L482.5,408.6L482,410.4L481.7,411.2L480.7,411.7L477.5,411.4L474.8,413L469.3,418.4L467.4,419.4L465.2,421.6L465.4,426.4L465.1,426.8L464.6,427.8L458.1,426.1L457.8,426.1L453.5,426.7L450.5,429L446.8,430.2L439.1,429.5L431.6,430.4L429.9,431L427.9,431.4L426.2,432.6L425.1,434.5L423.3,436.7L420.6,438.5L417.8,439.9L417.1,441.1L416.1,441.7L414.5,440.8L413.3,440.9L411.7,440.3L406.5,439.7L400.6,438.6L397.9,437.6L394.8,436.8L391.5,436.1L388.4,435.9L386.9,435.7L379.7,433.9L374.9,433.8L368.5,433.1L356.1,430.4L352.4,429.3L348.9,429L344.9,428L341.8,426.5L339.6,423.7L337.5,419.8L333.7,414.8L332.8,412.3L334.1,410.1L335.3,408.5L335.2,407.7L334.2,407.4L327.2,409.6L320.6,412.3L317.9,412.4L315.5,411.8L312.1,411.7L308.8,412.4L302.3,412.8L298.5,414.7L296.1,418.7L294.8,421.8L293.6,422.8L291.4,423.1L287.9,422.9L285.6,422L283.2,419.3L279.4,418.9L275.9,418.9L275.1,418.3L275.2,416.7L273.8,413.3L271.5,412.3L265.6,418.5L264,419L259.3,417.4L255.2,414.7L254.8,412.8L254.1,411.2L250.6,409.7L246.4,408.7L245,408.7L245.5,407.7L246,406.1L245.7,404.9L244.7,403.6L244.2,402.2L244.1,400.8L243.7,399.7L243.6,398.7Z"/><path class="land" d="M581.2,659.3L581.3,657L581.9,653.3L581.5,652.1L581.9,650L580.8,647.2L579.1,645.2L580.8,641.6L583.2,637.3L585.4,633.9L588.1,630.3L590,626.9L592,624L593.7,623.1L594.4,623.6L594.9,624.9L594.8,628.7L595.4,630.1L596.5,631.1L599,630.6L601.8,629.6L605.5,627.6L606.1,627.8L607.5,628.8L610.3,633.5L612.2,637.5L615.9,638.9L617.9,640.4L620.6,642.8L621.8,645.3L623.7,652.6L623.9,657L623.3,659.1L623,659.6L621.2,666.8L621.6,670.5L621.6,672.9L620.2,673.8L619.4,675.3L620.8,681.3L620.6,683.8L620.7,686.7L623.5,693.3L625.1,695.4L626.4,696.4L628.3,702.5L629.4,703.5L633.9,702.9L636,703.6L636.8,705.1L637.1,706L636.7,709.4L637.8,712L639.3,714.8L639.3,716.4L638.3,719L636.6,722.2L634.2,723.4L631.6,724.4L630.4,726.8L629.8,729.4L628.5,731.3L627.9,733.4L626.8,737.7L626.6,739.2L624.7,740.8L622,741.4L619.6,741.5L617.9,742.2L617.1,743.7L615.5,744.9L614.5,745.4L614.5,746.7L615.8,749.4L617,751.6L617,753.4L616.4,753.9L614.4,753.6L614,754.2L613.8,756.3L613.3,757.9L612.4,758.9L610.9,760.1L608.3,759.7L606,758L604.6,757.5L603.9,757.5L603.7,753.5L602.6,750.3L598.8,742.5L586.1,735L583.2,731.7L581.8,728.9L580.6,726.1L581.8,726L583,726.7L584.6,727.6L585.3,726.2L584.5,723.3L581.3,716.4L581,714.5L582.7,708.7L585.3,702.2L585.1,694.4L586,688.4L585,684.5L584.6,679.7L586.5,673.4L588.2,671.8L589.2,669.8L589.4,663L585.5,659.9Z"/></svg>
+        <div id="pins"></div>
+      </div>
+      <article class="story" id="story" aria-live="polite"></article>
+    </div>
+    <div class="legend" aria-label="Legenda">
+      <span><i class="dot k-eu"></i>Progetti europei</span>
+      <span><i class="dot k-comm"></i>Comunità e partecipazione</span>
+      <span><i class="dot k-root"></i>Radici e formazione</span>
+    </div>
+    <div class="place-list" id="placeList" role="group" aria-label="Luoghi"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICE DESIGN TOOLS ============ -->
+<section id="strumenti">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Gli strumenti con cui mappo gli ecosistemi</h2>
+      <p class="lead">Service design e pensiero sistemico: disegnare un sistema, con chi lo abita, prima di provare a cambiarlo.</p>
+    </div>
+    <div class="tools">
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g fill="#E1E7DF"><rect x="10" y="10" width="44" height="28" rx="4"/><rect x="62" y="10" width="44" height="28" rx="4"/><rect x="114" y="10" width="44" height="28" rx="4"/><rect x="166" y="10" width="44" height="28" rx="4"/>
+          <rect x="10" y="46" width="44" height="28" rx="4"/><rect x="62" y="46" width="44" height="28" rx="4"/><rect x="166" y="46" width="44" height="28" rx="4"/>
+          <rect x="10" y="82" width="44" height="28" rx="4"/><rect x="62" y="82" width="44" height="28" rx="4"/><rect x="114" y="82" width="44" height="28" rx="4"/></g>
+          <rect x="114" y="46" width="44" height="28" rx="4" fill="#F2C230"/><rect x="166" y="82" width="44" height="28" rx="4" fill="#2F5BEA"/>
+          <path d="M32 38 L136 60 M84 96 L136 60 L188 96 M188 38 L136 60" stroke="#14213D" stroke-width="2" fill="none"/>
+        </svg>
+        <h3>Gigamap</h3>
+        <p>Un intero sistema su un solo foglio: attori, flussi, tensioni e punti di leva, su una tela 3×4 del mio metodo SFSA.</p>
+        <p class="used">Metodo proprio: Systemic Foresight &amp; Service Architecture</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g stroke="#E1E7DF" stroke-width="10" stroke-linecap="round"><path d="M20 24H200"/><path d="M20 60H200"/><path d="M20 96H200"/></g>
+          <g stroke-width="10" stroke-linecap="round"><path d="M20 24H150" stroke="#2F5BEA"/><path d="M20 60H90" stroke="#5E8C6A"/><path d="M20 96H176" stroke="#F2C230"/></g>
+          <g fill="#14213D"><circle cx="20" cy="24" r="11"/><circle cx="20" cy="60" r="11"/><circle cx="20" cy="96" r="11"/></g><g fill="#FFFFFF" font-family="Atkinson Hyperlegible, sans-serif" font-size="11" font-weight="700" text-anchor="middle"><text x="20" y="28">T</text><text x="20" y="64">E</text><text x="20" y="100">N</text></g>
+        </svg>
+        <h3>3 Distanze</h3>
+        <p>Il framework diagnostico che ho sviluppato: legge la distanza tecnologica, ecosistemica e narrativa.</p>
+        <p class="used">Metodo proprio</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g stroke="#14213D" stroke-width="2"><path d="M110 60 L50 22 M110 60 L170 22 M110 60 L50 98 M110 60 L170 98 M50 22 L170 22 M50 98 L170 98" fill="none" stroke-dasharray="4 4"/></g>
+          <circle cx="110" cy="60" r="18" fill="#F2C230"/>
+          <g fill="#2F5BEA"><circle cx="50" cy="22" r="14"/><circle cx="170" cy="22" r="14"/><circle cx="50" cy="98" r="14"/><circle cx="170" cy="98" r="14"/></g>
+          <g fill="#FFFFFF" font-family="Atkinson Hyperlegible, sans-serif" font-size="11" font-weight="700" text-anchor="middle"><text x="50" y="26">U</text><text x="170" y="26">PA</text><text x="50" y="102">I</text><text x="170" y="102">SC</text></g>
+        </svg>
+        <h3>Mappa degli ecosistemi</h3>
+        <p>Chi sono gli attori in quadrupla elica (università, pubblica amministrazione, imprese, società civile) e come si parlano.</p>
+        <p class="used">Usato in KALEIDOS, fieldwork in 4 regioni europee</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g fill="#E1E7DF"><rect x="10" y="8" width="200" height="22" rx="3"/><rect x="10" y="36" width="200" height="22" rx="3"/><rect x="10" y="68" width="200" height="22" rx="3"/><rect x="10" y="96" width="200" height="18" rx="3"/></g>
+          <g fill="#2F5BEA"><rect x="20" y="12" width="36" height="14" rx="3"/><rect x="92" y="12" width="36" height="14" rx="3"/><rect x="164" y="12" width="36" height="14" rx="3"/></g>
+          <g fill="#14213D"><rect x="56" y="40" width="36" height="14" rx="3"/><rect x="128" y="40" width="36" height="14" rx="3"/><rect x="92" y="72" width="36" height="14" rx="3"/></g>
+          <path d="M10 63H210" stroke="#F2C230" stroke-width="3" stroke-dasharray="6 5"/>
+        </svg>
+        <h3>Service blueprint</h3>
+        <p>Ciò che la persona vede e ciò che succede dietro le quinte, sulla stessa pagina, separati dalla linea di visibilità.</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <path d="M10 60H210" stroke="#E1E7DF" stroke-width="2"/>
+          <path d="M20 70 C 50 20, 70 20, 90 50 S 120 105, 150 85 S 190 25, 200 30" fill="none" stroke="#2F5BEA" stroke-width="4" stroke-linecap="round"/>
+          <g fill="#FFFFFF" stroke="#14213D" stroke-width="3"><circle cx="20" cy="70" r="7"/><circle cx="62" cy="31" r="7"/><circle cx="112" cy="87" r="7"/><circle cx="160" cy="75" r="7"/><circle cx="200" cy="30" r="7"/></g>
+        </svg>
+        <h3>User journey</h3>
+        <p>Il percorso di una persona attraverso un servizio, momento per momento, con i punti in cui si inceppa.</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g fill="#E1E7DF"><rect x="8" y="44" width="46" height="32" rx="5"/><rect x="166" y="14" width="46" height="32" rx="5"/><rect x="166" y="74" width="46" height="32" rx="5"/></g>
+          <path d="M110 36 L134 60 L110 84 L86 60 Z" fill="#F2C230"/>
+          <g stroke="#14213D" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M54 60H80"/><path d="M134 60 C150 60 150 30 160 30"/><path d="M134 60 C150 60 150 90 160 90"/></g>
+          <g fill="#14213D"><path d="M80 55 L88 60 L80 65Z"/><path d="M158 25 L166 30 L158 35Z"/><path d="M158 85 L166 90 L158 95Z"/></g>
+          <g fill="#2F5BEA"><circle cx="31" cy="60" r="6"/><circle cx="189" cy="30" r="6"/><circle cx="189" cy="90" r="6"/></g>
+        </svg>
+        <h3>Processi e flussi di dati</h3>
+        <p>Da dove arrivano i dati, chi li tocca, dove si decide: la base per governare un processo invece di subirlo.</p>
+        <p class="used">Usato in Neverhack, ambienti regolati NIS2 e GDPR</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g stroke="#14213D" stroke-width="2" fill="none"><path d="M110 28 V44 M50 44 H170 M50 44 V58 M110 44 V58 M170 44 V58 M50 78 V90 M30 90 H70 M30 90 V100 M70 90 V100 M170 78 V100"/></g>
+          <rect x="84" y="8" width="52" height="20" rx="4" fill="#14213D"/>
+          <g fill="#2F5BEA"><rect x="28" y="58" width="44" height="20" rx="4"/><rect x="88" y="58" width="44" height="20" rx="4"/><rect x="148" y="58" width="44" height="20" rx="4"/></g>
+          <g fill="#E1E7DF"><rect x="16" y="100" width="28" height="14" rx="3"/><rect x="56" y="100" width="28" height="14" rx="3"/><rect x="156" y="100" width="28" height="14" rx="3"/></g>
+        </svg>
+        <h3>Architettura dell’informazione</h3>
+        <p>Dare una struttura alla conoscenza di un progetto perché chi arriva dopo la trovi e la riusi.</p>
+        <p class="used">Usato in IN-HABIT, Work Package 5</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <g><rect x="20" y="16" width="40" height="36" rx="3" fill="#F2C230" transform="rotate(-6 40 34)"/><rect x="68" y="12" width="40" height="36" rx="3" fill="#E1E7DF" transform="rotate(4 88 30)"/><rect x="118" y="18" width="40" height="36" rx="3" fill="#F2C230" transform="rotate(-3 138 36)"/><rect x="164" y="14" width="40" height="36" rx="3" fill="#E1E7DF" transform="rotate(5 184 32)"/>
+          <rect x="44" y="64" width="40" height="36" rx="3" fill="#2F5BEA" transform="rotate(3 64 82)"/><rect x="96" y="66" width="40" height="36" rx="3" fill="#F2C230" transform="rotate(-5 116 84)"/><rect x="146" y="62" width="40" height="36" rx="3" fill="#E1E7DF" transform="rotate(2 166 80)"/></g>
+          <ellipse cx="116" cy="84" rx="92" ry="34" fill="none" stroke="#14213D" stroke-width="2" stroke-dasharray="5 5"/>
+        </svg>
+        <h3>Workshop di co-design</h3>
+        <p>Sessioni strutturate con gruppi misti per far emergere un’idea condivisa prima di scrivere o costruire.</p>
+        <p class="used">Usato nel mentoring su due proposte Horizon Europe e in XYZ</p>
+      </article>
+
+      <article class="tool">
+        <svg class="tool-fig" viewBox="0 0 220 120" aria-hidden="true">
+          <path d="M20 60 L200 12 L200 108 Z" fill="#E1E7DF"/>
+          <path d="M20 60 L200 32 L200 88 Z" fill="#2F5BEA" opacity=".35"/>
+          <path d="M20 60 L200 60" stroke="#14213D" stroke-width="2.5"/>
+          <circle cx="20" cy="60" r="8" fill="#14213D"/>
+          <g fill="#F2C230"><circle cx="120" cy="38" r="5"/><circle cx="160" cy="84" r="5"/><circle cx="182" cy="24" r="5"/></g>
+        </svg>
+        <h3>Foresight sistemico</h3>
+        <p>Scenari possibili e segnali deboli, per prendere decisioni di oggi guardando più avanti.</p>
+        <p class="used">Metodo proprio: SFSA</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECT MANAGEMENT ============ -->
+<section id="progetti">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Project management, dal 2021</h2>
+      <p class="lead">Tre progetti europei, un Work Package guidato, due proposte seguite in fase di ideazione.</p>
+    </div>
+
+    <div class="gantt" role="img" aria-label="Linea del tempo: IN-HABIT 2021-2022, PERCEIVE 2022-2023, consulenza 2023-2025, KALEIDOS 2024-2026, Neverhack dal 2025">
+      <div class="g-row g-head"><div></div><div class="g-years"><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div></div>
+      <div class="g-row"><div class="g-name"><b>IN-HABIT</b><small>Information Architect, Horizon 2020</small></div><div class="g-track"><span class="g-bar" style="left:11.1%;width:16.7%;background:var(--route)"></span></div></div>
+      <div class="g-row"><div class="g-name"><b>PERCEIVE</b><small>Researcher, Horizon Europe</small></div><div class="g-track"><span class="g-bar" style="left:16.7%;width:20.8%;background:var(--route)"></span></div></div>
+      <div class="g-row"><div class="g-name"><b>Consulenza</b><small>Mentoring proposte Horizon Europe</small></div><div class="g-track"><span class="g-bar" style="left:33.3%;width:50%;background:var(--highlight)"></span></div></div>
+      <div class="g-row"><div class="g-name"><b>KALEIDOS</b><small>Work Package 4 Lead, Horizon Europe</small></div><div class="g-track"><span class="g-bar" style="left:55.6%;width:36.1%;background:var(--ink)"></span></div></div>
+      <div class="g-row"><div class="g-name"><b>Neverhack Italy</b><small>IGA Specialist</small></div><div class="g-track"><span class="g-bar" style="left:76.4%;width:19.4%;background:var(--contour)"></span></div></div>
+    </div>
+
+    <h3 style="margin-top:64px">Come ho guidato il Work Package 4 di KALEIDOS</h3>
+    <div class="wp">
+      <div class="wp-step">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-people"/></svg></div>
+        <b>Coordinare</b>
+        <div class="dots" role="img" aria-label="9 partner"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>9 partner in una Coordination and Support Action Horizon Europe.</p>
+      </div>
+      <div class="wp-step">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></div>
+        <b>Andare sul campo</b>
+        <div class="dots" role="img" aria-label="4 regioni"><i></i><i></i><i></i><i></i></div>
+        <p>Interviste e fieldwork in quadrupla elica in 4 regioni europee.</p>
+      </div>
+      <div class="wp-step">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
+        <b>Scrivere</b>
+        <div class="dots" role="img" aria-label="1 deliverable"><i></i></div>
+        <p>D4.1, sola autrice principale, pubblicato open access.</p>
+      </div>
+      <div class="wp-step">
+        <div class="ico"><svg aria-hidden="true"><use href="#i-flag"/></svg></div>
+        <b>Consegnare</b>
+        <div class="dots" role="img" aria-label="consegnato"><i style="background:var(--highlight)"></i></div>
+        <p>Deliverable nei tempi, reporting alla Commissione, supporto alla rendicontazione.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT I BRING ============ -->
+<section style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="section-head"><h2>Cosa porto a un’organizzazione culturale</h2></div>
+    <div class="bring">
+      <div class="bring-card">
+        <svg class="ico" aria-hidden="true" style="color:var(--route)"><use href="#i-flag"/></svg>
+        <h3>Progettazione europea</h3>
+        <p>Horizon Europe e Horizon 2020 vissuti dall’interno: monitoraggio dei bandi, workshop di co-design in fase di ideazione, gestione fino alla consegna.</p>
+      </div>
+      <div class="bring-card">
+        <svg class="ico" aria-hidden="true" style="color:var(--route)"><use href="#i-globe"/></svg>
+        <h3>Relazioni internazionali</h3>
+        <p>Consorzi di 9 e 11 partner, lavoro tra Bologna, Berlino e Lucerna, in cinque lingue.</p>
+        <div class="cefr" role="img" aria-label="Lingue: italiano madrelingua, inglese C2, spagnolo C1, francese B2, tedesco B2">
+          <div class="cefr-row"><span>Italiano</span><div class="cefr-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><b>L1</b></div>
+          <div class="cefr-row"><span>Inglese</span><div class="cefr-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><b>C2</b></div>
+          <div class="cefr-row"><span>Spagnolo</span><div class="cefr-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><b>C1</b></div>
+          <div class="cefr-row"><span>Francese</span><div class="cefr-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><b>B2</b></div>
+          <div class="cefr-row"><span>Tedesco</span><div class="cefr-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><b>B2</b></div>
+        </div>
+      </div>
+      <div class="bring-card">
+        <svg class="ico" aria-hidden="true" style="color:var(--route)"><use href="#i-open"/></svg>
+        <h3>Digital commons</h3>
+        <p>Un deliverable open access, un toolkit open source e un dataset pubblico: le stesse logiche di condivisione che i programmi europei chiedono alla cultura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTPUTS ============ -->
+<section id="output">
+  <div class="wrap">
+    <div class="section-head"><h2>Output aperti</h2></div>
+    <div class="outs">
+      <a class="out" href="https://doi.org/10.5281/zenodo.17909495" target="_blank" rel="noopener"><svg aria-hidden="true" style="color:var(--route)"><use href="#i-doc"/></svg><span><b>KALEIDOS D4.1: Open Science and Knowledge Valorisation</b><small>Sola autrice principale, DOI 10.5281/zenodo.17909495</small></span></a>
+      <a class="out" href="https://github.com/teragramgius/horizon-europe-knowledge-valorisation-toolkit" target="_blank" rel="noopener"><svg aria-hidden="true" style="color:var(--route)"><use href="#i-code"/></svg><span><b>Horizon Europe Knowledge Valorisation Toolkit</b><small>Template, rubric e indicatori open source</small></span></a>
+      <a class="out" href="https://github.com/teragramgius/eu-ai-governance-tracker" target="_blank" rel="noopener"><svg aria-hidden="true" style="color:var(--route)"><use href="#i-data"/></svg><span><b>EU AI Governance Tracker</b><small>Dataset JSON e notebook Python sui framework regolatori UE</small></span></a>
+      <a class="out" href="https://doi.org/10.5281/zenodo.10458408" target="_blank" rel="noopener"><svg aria-hidden="true" style="color:var(--route)"><use href="#i-doc"/></svg><span><b>Adaptive Horizons (PERCEIVE)</b><small>Co-autrice, DOI 10.5281/zenodo.10458408</small></span></a>
+      <a class="out" href="https://teragramgius.github.io/horizon/?lang=it" target="_blank" rel="noopener"><svg aria-hidden="true" style="color:var(--route)"><use href="#i-map"/></svg><span><b>Track record Horizon Europe</b><small>Matrice interattiva delle competenze</small></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CV DOWNLOAD ============ -->
+<section id="cv" style="padding-top:0">
+  <div class="wrap">
+    <div class="cv">
+      <div>
+        <h2>Il CV, in una pagina</h2>
+        <p>Esperienze, progetti europei, pubblicazioni e competenze. Formato PDF, in italiano.</p>
+        <div class="cv-actions">
+          <a class="btn btn-solid" href="assets/Giusy_Grieco_CV.pdf" download><svg aria-hidden="true"><use href="#i-download"/></svg>Scarica il CV (PDF)</a>
+          <a class="btn btn-line" href="assets/Giusy_Grieco_Progetti_Proposte.pdf" download><svg aria-hidden="true"><use href="#i-download"/></svg>Progetti e proposte (PDF)</a>
+          <a class="btn btn-line" href="assets/Giusy_Grieco_CV.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-eye"/></svg>Apri il CV nel browser</a>
+        </div>
+      </div>
+      <div class="cv-doc" aria-hidden="true"><i class="h"></i><i></i><i></i><i class="b"></i><i></i><i></i><i></i><i class="b"></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <h2>Parliamone.</h2>
+    <div class="contacts">
+      <a href="mailto:giusygrieco@proton.me"><svg aria-hidden="true"><use href="#i-mail"/></svg>giusygrieco@proton.me</a>
+      <a href="tel:+393396187260"><svg aria-hidden="true"><use href="#i-phone"/></svg>+39 339 618 7260</a>
+      <a href="https://linkedin.com/in/giusy-grieco-101612202" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-link"/></svg>LinkedIn</a>
+      <a href="https://github.com/teragramgius" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-code"/></svg>GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const KIND = {
+    eu:   { label: 'Progetto europeo',          color: '#2F5BEA', text: '#FFFFFF' },
+    comm: { label: 'Comunità e partecipazione', color: '#F2C230', text: '#14213D' },
+    root: { label: 'Radici e formazione',       color: '#5E8C6A', text: '#FFFFFF' }
+  };
+  /* x, y: posizione in percentuale sulla mappa (proiezione di Mercatore, coordinate reali) */
+  const PLACES = [
+    { id: 'bologna', name: 'Bologna', kind: 'eu', x: 40.21, y: 65.3, side: 'r',
+      when: 'KALEIDOS, Horizon Europe, 05/2024 – 07/2026',
+      body: 'Work Package 4 Lead all’Università di Bologna, in un consorzio di 9 partner. Ho disegnato la ricerca, coordinato i partner nel fieldwork in quattro regioni europee e firmato come sola autrice principale il deliverable D4.1 sulla valorizzazione della conoscenza. Qui ho anche studiato Digital Humanities.',
+      tags: ['Work Package Lead', 'quadrupla elica', 'open science'] },
+    { id: 'berlino', name: 'Berlino', kind: 'eu', x: 49.55, y: 14.24, side: 'r',
+      when: 'IN-HABIT, Horizon 2020, 09/2021 – 09/2022',
+      body: 'Information Architect del WP5 con Tesseræ Urban Social Research. Ho progettato l’architettura dell’informazione del work package e tradotto la ricerca su innovazione e rigenerazione urbana in materiali per pubblici ampi e non specialistici.',
+      tags: ['rigenerazione urbana', 'information architecture', 'storytelling'] },
+    { id: 'lucerna', name: 'Lucerna', kind: 'eu', x: 26.49, y: 49.88, side: 'r',
+      when: 'PERCEIVE, Horizon Europe, 2022 – 04/2023',
+      body: 'Researcher alla Hochschule Luzern in un consorzio di 11 partner coordinato da CNR ISPC: interpretabilità e autenticità delle ricostruzioni del colore generate da AI nel patrimonio culturale. Co-autrice di Adaptive Horizons.',
+      tags: ['patrimonio culturale', 'AI', 'consorzio internazionale'] },
+    { id: 'zakopane', name: 'Zakopane', kind: 'comm', x: 79.22, y: 35.71, side: 'l',
+      when: 'Erasmus+, 2022',
+      body: 'Youth Leader e facilitazione visuale in un progetto Erasmus+: rendere visibile il pensiero di un gruppo internazionale mentre prende forma.',
+      tags: ['Erasmus+', 'facilitazione visuale'] },
+    { id: 'sannicandro', name: 'Sannicandro di Bari', kind: 'comm', x: 64.96, y: 85.27, side: 'r',
+      when: 'XYZ con La Scuola Open Source',
+      body: 'Design partecipativo nel progetto XYZ, sulla sconsacrazione della sagra: una comunità che ripensa un proprio rito.',
+      tags: ['design partecipativo', 'open source', 'comunità'] },
+    { id: 'napoli', name: 'Napoli e Procida', kind: 'root', x: 53.39, y: 86.1, side: 'l',
+      when: 'Accademia di Belle Arti, STOPTIGRE',
+      body: 'A Napoli mi sono formata in New Media Art all’Accademia di Belle Arti. A Procida ho facilitato un progetto di citizen science con STOPTIGRE: cittadini che raccolgono dati sul proprio territorio.',
+      tags: ['New Media Art', 'citizen science'] },
+    { id: 'oliveto', name: 'Oliveto Citra ed Eboli', kind: 'root', side2: 'b', x: 57.84, y: 86.99, side: 'r',
+      when: 'Origine, mostra fotografica nel 2020',
+      body: 'Oliveto Citra è il paese da cui vengo. Alle Fornaci Romane di Eboli, nel 2020, ho esposto una mostra fotografica sull’immigrazione.',
+      tags: ['territorio', 'fotografia'] }
+  ];
+
+  const storyEl = document.getElementById('story');
+  const listEl = document.getElementById('placeList');
+  const pinsEl = document.getElementById('pins');
+
+  function esc(s) { return s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  function show(id) {
+    const p = PLACES.find(x => x.id === id) || PLACES[0];
+    const k = KIND[p.kind];
+    storyEl.innerHTML =
+      '<span class="story-kind" style="background:' + k.color + ';color:' + k.text + '">' + esc(k.label) + '</span>' +
+      '<h3>' + esc(p.name) + '</h3>' +
+      '<p class="when">' + esc(p.when) + '</p>' +
+      '<p>' + esc(p.body) + '</p>' +
+      '<div class="tags">' + p.tags.map(t => '<span>' + esc(t) + '</span>').join('') + '</div>';
+    document.querySelectorAll('button[data-id]').forEach(el => {
+      const on = el.dataset.id === p.id;
+      el.setAttribute('aria-pressed', String(on));
+      const dot = el.querySelector('.pin');
+      if (dot) dot.classList.toggle('is-active', on);
+    });
+  }
+
+  PLACES.forEach(p => {
+    const pin = document.createElement('button');
+    pin.type = 'button';
+    pin.className = 'pinbtn';
+    pin.dataset.id = p.id;
+    pin.style.left = p.x + '%';
+    pin.style.top = p.y + '%';
+    pin.setAttribute('aria-label', p.name);
+    pin.innerHTML = '<span class="pin" style="background:' + KIND[p.kind].color + '"></span>';
+    pin.addEventListener('click', () => show(p.id));
+    pinsEl.appendChild(pin);
+
+    const lab = document.createElement('span');
+    lab.className = 'pinlabel' + (p.side2 === 'b' ? ' below' : p.side === 'l' ? ' left' : '');
+    lab.style.left = p.x + '%';
+    lab.style.top = p.y + '%';
+    lab.textContent = p.name;
+    lab.setAttribute('aria-hidden', 'true');
+    pinsEl.appendChild(lab);
+
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.dataset.id = p.id;
+    b.textContent = p.name;
+    b.addEventListener('click', () => show(p.id));
+    listEl.appendChild(b);
+  });
+
+  show('bologna');
+})();
+</script>
+
+</body>
+</html>
